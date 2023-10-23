@@ -29,16 +29,13 @@ public class TypeStateAnalysis extends ForwardAnalysis<Set<FileStateFact>> {
 			Value rhs = assignStmt.getRightOp();
 			this.removeKeyIfExist(out, lhs);
 			this.addKey(out, rhs, lhs);
-		}
-
-		if (unit instanceof soot.jimple.internal.JInvokeStmt) {
+		} else if (unit instanceof soot.jimple.internal.JInvokeStmt) {
 			// update
 			JInvokeStmt invokeStmt = (JInvokeStmt) unit;
 			InvokeExpr invokeExpr = invokeStmt.getInvokeExpr();
 			List<ValueBox> boxes = invokeStmt.getUseBoxes();
 
-			String signature = invokeExpr.getMethod().getSignature();
-			if (!signature.contains("target.exercise2.File") || (long) boxes.size() < 2)
+			if (!this.method.getSignature().contains("target.exercise2.File") || (long) boxes.size() < 2)
 				return;
 
 			Value lhs = boxes.get(0).getValue();
@@ -46,9 +43,7 @@ public class TypeStateAnalysis extends ForwardAnalysis<Set<FileStateFact>> {
 
 			if (state != null)
 				this.updateFact(out, state, lhs);
-		}
-
-		if (unit instanceof soot.jimple.internal.JReturnVoidStmt && this.hasUnClosedFile(out)) {
+		} else if (unit instanceof soot.jimple.internal.JReturnVoidStmt && this.hasUnClosedFile(out)) {
 			reporter.reportVulnerability(this.method.getSignature(), unit);
 		}
 		prettyPrint(in, unit, out);
@@ -91,8 +86,8 @@ public class TypeStateAnalysis extends ForwardAnalysis<Set<FileStateFact>> {
 		}
 		return null;
 	}
-	private void updateFact(Set<FileStateFact> res, FileState toState, Value key) {
 
+	private void updateFact(Set<FileStateFact> res, FileState toState, Value key) {
 		if (toState == FileState.Init) {
 			this.removeKeyIfExist(res, key);
 			FileStateFact newFact = new FileStateFact(new HashSet<>(Collections.singleton(key)), toState);
