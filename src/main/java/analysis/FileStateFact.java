@@ -31,6 +31,14 @@ public class FileStateFact{
 		this.aliases.add(alias);
 	}
 
+	public int numberOfAlias() {
+		return this.aliases.size();
+	}
+
+	public void removeAlias(Value alias) {
+		this.aliases.remove(alias);
+	}
+
 	public boolean isOpened() {
 		return state.equals(FileState.Open);
 	}
