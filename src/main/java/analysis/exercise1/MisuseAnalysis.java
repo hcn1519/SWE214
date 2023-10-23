@@ -29,7 +29,7 @@ public class MisuseAnalysis extends AbstractAnalysis{
 
 		for (ValueBox valueBox : rightOp.getUseBoxes()) {
 			if (this.isVulnerableCipherString(valueBox.getValue().toString())) {
-				reporter.reportVulnerability("<target.exercise1.Misuse: void test()>", unit);
+				reporter.reportVulnerability(this.method.getSignature(), unit);
 			}
 		}
 	}
