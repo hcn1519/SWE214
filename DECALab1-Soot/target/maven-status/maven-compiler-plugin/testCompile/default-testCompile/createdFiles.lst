@@ -1,0 +1,12 @@
+target/exercise2/File.class
+target/exercise1/Misuse.class
+exercises/Exercise2Test$1.class
+exercises/Exercise1Test.class
+exercises/Exercise1Test$1.class
+target/exercise2/FileClosedAliasing.class
+target/exercise1/NoMisuse.class
+exercises/Exercise2Test.class
+base/TestSetup.class
+target/exercise2/FileClosed.class
+target/exercise2/FileNotClosedAliasing.class
+target/exercise2/FileNotClosed.class

@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="exercises.Exercise2Test" time="13.012" tests="4" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="gopherProxySet" value="false"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/changnam/dev/InteliJ/DECALab1-Soot/target/test-classes:/Users/changnam/dev/InteliJ/DECALab1-Soot/target/classes:/Users/changnam/.m2/repository/org/soot-oss/soot/4.2.1/soot-4.2.1.jar:/Users/changnam/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar:/Users/changnam/.m2/repository/org/smali/dexlib2/2.4.0/dexlib2-2.4.0.jar:/Users/changnam/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/Users/changnam/.m2/repository/com/google/guava/guava/27.1-android/guava-27.1-android.jar:/Users/changnam/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/Users/changnam/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/changnam/.m2/repository/org/checkerframework/checker-compat-qual/2.5.2/checker-compat-qual-2.5.2.jar:/Users/changnam/.m2/repository/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.jar:/Users/changnam/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/Users/changnam/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.17/animal-sniffer-annotations-1.17.jar:/Users/changnam/.m2/repository/org/ow2/asm/asm/8.0.1/asm-8.0.1.jar:/Users/changnam/.m2/repository/org/ow2/asm/asm-tree/8.0.1/asm-tree-8.0.1.jar:/Users/changnam/.m2/repository/org/ow2/asm/asm-util/8.0.1/asm-util-8.0.1.jar:/Users/changnam/.m2/repository/org/ow2/asm/asm-analysis/8.0.1/asm-analysis-8.0.1.jar:/Users/changnam/.m2/repository/org/ow2/asm/asm-commons/8.0.1/asm-commons-8.0.1.jar:/Users/changnam/.m2/repository/xmlpull/xmlpull/1.1.3.4d_b4_min/xmlpull-1.1.3.4d_b4_min.jar:/Users/changnam/.m2/repository/de/upb/cs/swt/axml/2.0.0/axml-2.0.0.jar:/Users/changnam/.m2/repository/ca/mcgill/sable/polyglot/2006/polyglot-2006.jar:/Users/changnam/.m2/repository/de/upb/cs/swt/heros/1.2.2/heros-1.2.2.jar:/Users/changnam/.m2/repository/org/functionaljava/functionaljava/4.2/functionaljava-4.2.jar:/Users/changnam/.m2/repository/ca/mcgill/sable/jasmin/3.0.2/jasmin-3.0.2.jar:/Users/changnam/.m2/repository/ca/mcgill/sable/java_cup/0.9.2/java_cup-0.9.2.jar:/Users/changnam/.m2/repository/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar:/Users/changnam/.m2/repository/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar:/Users/changnam/.m2/repository/javax/xml/bind/jaxb-api/2.4.0-b180725.0427/jaxb-api-2.4.0-b180725.0427.jar:/Users/changnam/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/Users/changnam/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.4.0-b180830.0438/jaxb-runtime-2.4.0-b180830.0438.jar:/Users/changnam/.m2/repository/org/glassfish/jaxb/txw2/2.4.0-b180830.0438/txw2-2.4.0-b180830.0438.jar:/Users/changnam/.m2/repository/com/sun/istack/istack-commons-runtime/3.0.7/istack-commons-runtime-3.0.7.jar:/Users/changnam/.m2/repository/org/jvnet/staxex/stax-ex/1.8/stax-ex-1.8.jar:/Users/changnam/.m2/repository/com/sun/xml/fastinfoset/FastInfoset/1.2.15/FastInfoset-1.2.15.jar:/Users/changnam/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/changnam/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="java.vm.vendor" value="Temurin"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="user.country" value="KR"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib"/>
+    <property name="sun.java.command" value="/Users/changnam/dev/InteliJ/DECALab1-Soot/target/surefire/surefirebooter-20231027162819064_3.jar /Users/changnam/dev/InteliJ/DECALab1-Soot/target/surefire 2023-10-27T16-28-18_779-jvmRun1 surefire-20231027162819064_1tmp surefire_0-20231027162819064_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="surefire.test.class.path" value="/Users/changnam/dev/InteliJ/DECALab1-Soot/target/test-classes:/Users/changnam/dev/InteliJ/DECALab1-Soot/target/classes:/Users/changnam/.m2/repository/org/soot-oss/soot/4.2.1/soot-4.2.1.jar:/Users/changnam/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar:/Users/changnam/.m2/repository/org/smali/dexlib2/2.4.0/dexlib2-2.4.0.jar:/Users/changnam/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/Users/changnam/.m2/repository/com/google/guava/guava/27.1-android/guava-27.1-android.jar:/Users/changnam/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/Users/changnam/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/changnam/.m2/repository/org/checkerframework/checker-compat-qual/2.5.2/checker-compat-qual-2.5.2.jar:/Users/changnam/.m2/repository/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.jar:/Users/changnam/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/Users/changnam/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.17/animal-sniffer-annotations-1.17.jar:/Users/changnam/.m2/repository/org/ow2/asm/asm/8.0.1/asm-8.0.1.jar:/Users/changnam/.m2/repository/org/ow2/asm/asm-tree/8.0.1/asm-tree-8.0.1.jar:/Users/changnam/.m2/repository/org/ow2/asm/asm-util/8.0.1/asm-util-8.0.1.jar:/Users/changnam/.m2/repository/org/ow2/asm/asm-analysis/8.0.1/asm-analysis-8.0.1.jar:/Users/changnam/.m2/repository/org/ow2/asm/asm-commons/8.0.1/asm-commons-8.0.1.jar:/Users/changnam/.m2/repository/xmlpull/xmlpull/1.1.3.4d_b4_min/xmlpull-1.1.3.4d_b4_min.jar:/Users/changnam/.m2/repository/de/upb/cs/swt/axml/2.0.0/axml-2.0.0.jar:/Users/changnam/.m2/repository/ca/mcgill/sable/polyglot/2006/polyglot-2006.jar:/Users/changnam/.m2/repository/de/upb/cs/swt/heros/1.2.2/heros-1.2.2.jar:/Users/changnam/.m2/repository/org/functionaljava/functionaljava/4.2/functionaljava-4.2.jar:/Users/changnam/.m2/repository/ca/mcgill/sable/jasmin/3.0.2/jasmin-3.0.2.jar:/Users/changnam/.m2/repository/ca/mcgill/sable/java_cup/0.9.2/java_cup-0.9.2.jar:/Users/changnam/.m2/repository/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar:/Users/changnam/.m2/repository/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar:/Users/changnam/.m2/repository/javax/xml/bind/jaxb-api/2.4.0-b180725.0427/jaxb-api-2.4.0-b180725.0427.jar:/Users/changnam/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/Users/changnam/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.4.0-b180830.0438/jaxb-runtime-2.4.0-b180830.0438.jar:/Users/changnam/.m2/repository/org/glassfish/jaxb/txw2/2.4.0-b180830.0438/txw2-2.4.0-b180830.0438.jar:/Users/changnam/.m2/repository/com/sun/istack/istack-commons-runtime/3.0.7/istack-commons-runtime-3.0.7.jar:/Users/changnam/.m2/repository/org/jvnet/staxex/stax-ex/1.8/stax-ex-1.8.jar:/Users/changnam/.m2/repository/com/sun/xml/fastinfoset/FastInfoset/1.2.15/FastInfoset-1.2.15.jar:/Users/changnam/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/changnam/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/changnam"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre"/>
+    <property name="basedir" value="/Users/changnam/dev/InteliJ/DECALab1-Soot"/>
+    <property name="file.separator" value="/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/Users/changnam/dev/InteliJ/DECALab1-Soot/target/surefire/surefirebooter-20231027162819064_3.jar"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/classes"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="1.8.0_372-b07"/>
+    <property name="user.name" value="changnam"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="14.0"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/changnam/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/y6/7xbldr8x0g717pc5ss3ktjbm0000gn/T/"/>
+    <property name="java.version" value="1.8.0_372"/>
+    <property name="user.dir" value="/Users/changnam/dev/InteliJ/DECALab1-Soot"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/Users/changnam/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Temurin"/>
+    <property name="java.vm.version" value="25.372-b07"/>
+    <property name="java.specification.maintenance.version" value="4"/>
+    <property name="java.ext.dirs" value="/Users/changnam/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+  </properties>
+  <testcase name="testFileNotClosedAliasing" classname="exercises.Exercise2Test" time="4.218">
+    <system-out><![CDATA[Method: <target.exercise2.FileNotClosedAliasing: void <init>()>
+	 In Fact: []
+	    Stmt: this := @this: target.exercise2.FileNotClosedAliasing
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: specialinvoke this.<java.lang.Object: void <init>()>()
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: return
+	Out Fact: []
+
+Method: <target.exercise2.FileNotClosedAliasing: void test1()>
+	 In Fact: []
+	    Stmt: this := @this: target.exercise2.FileNotClosedAliasing
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: $stack3 = new target.exercise2.File
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: specialinvoke $stack3.<target.exercise2.File: void <init>()>()
+	Out Fact: [([$stack3], Init)]
+
+	 In Fact: [([$stack3], Init)]
+	    Stmt: virtualinvoke $stack3.<target.exercise2.File: void open()>()
+	Out Fact: [([$stack3], Open)]
+
+	 In Fact: [([$stack3], Open)]
+	    Stmt: return
+	Out Fact: [([$stack3], Open)]
+
+Method: <target.exercise2.FileNotClosedAliasing: void test2()>
+	 In Fact: []
+	    Stmt: this := @this: target.exercise2.FileNotClosedAliasing
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: $stack2 = new target.exercise2.File
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: specialinvoke $stack2.<target.exercise2.File: void <init>()>()
+	Out Fact: [([$stack2], Init)]
+
+	 In Fact: [([<target.exercise2.FileNotClosedAliasing: target.exercise2.File staticFile>, $stack2], Init)]
+	    Stmt: <target.exercise2.FileNotClosedAliasing: target.exercise2.File staticFile> = $stack2
+	Out Fact: [([<target.exercise2.FileNotClosedAliasing: target.exercise2.File staticFile>, $stack2], Init)]
+
+	 In Fact: [([file, <target.exercise2.FileNotClosedAliasing: target.exercise2.File staticFile>, $stack2], Init)]
+	    Stmt: file = <target.exercise2.FileNotClosedAliasing: target.exercise2.File staticFile>
+	Out Fact: [([file, <target.exercise2.FileNotClosedAliasing: target.exercise2.File staticFile>, $stack2], Init)]
+
+	 In Fact: [([file, <target.exercise2.FileNotClosedAliasing: target.exercise2.File staticFile>, $stack2], Init)]
+	    Stmt: virtualinvoke file.<target.exercise2.File: void open()>()
+	Out Fact: [([file, <target.exercise2.FileNotClosedAliasing: target.exercise2.File staticFile>, $stack2], Open)]
+
+	 In Fact: [([file, <target.exercise2.FileNotClosedAliasing: target.exercise2.File staticFile>, $stack2], Open)]
+	    Stmt: return
+	Out Fact: [([file, <target.exercise2.FileNotClosedAliasing: target.exercise2.File staticFile>, $stack2], Open)]
+
+Method: <target.exercise2.FileNotClosedAliasing: void test3()>
+	 In Fact: []
+	    Stmt: this := @this: target.exercise2.FileNotClosedAliasing
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: $stack2 = new target.exercise2.File
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: specialinvoke $stack2.<target.exercise2.File: void <init>()>()
+	Out Fact: [([$stack2], Init)]
+
+	 In Fact: [([<target.exercise2.FileNotClosedAliasing: target.exercise2.File staticFile>, $stack2], Init)]
+	    Stmt: <target.exercise2.FileNotClosedAliasing: target.exercise2.File staticFile> = $stack2
+	Out Fact: [([<target.exercise2.FileNotClosedAliasing: target.exercise2.File staticFile>, $stack2], Init)]
+
+	 In Fact: [([<target.exercise2.FileNotClosedAliasing: target.exercise2.File staticFile>, $stack2, $stack3], Init)]
+	    Stmt: $stack3 = <target.exercise2.FileNotClosedAliasing: target.exercise2.File staticFile>
+	Out Fact: [([<target.exercise2.FileNotClosedAliasing: target.exercise2.File staticFile>, $stack2, $stack3], Init)]
+
+	 In Fact: [([<target.exercise2.FileNotClosedAliasing: target.exercise2.File staticFile>, $stack2, $stack3], Init)]
+	    Stmt: virtualinvoke $stack3.<target.exercise2.File: void open()>()
+	Out Fact: [([<target.exercise2.FileNotClosedAliasing: target.exercise2.File staticFile>, $stack2, $stack3], Open)]
+
+	 In Fact: [([<target.exercise2.FileNotClosedAliasing: target.exercise2.File staticFile>, $stack2, $stack3], Open)]
+	    Stmt: return
+	Out Fact: [([<target.exercise2.FileNotClosedAliasing: target.exercise2.File staticFile>, $stack2, $stack3], Open)]
+
+Method: <target.exercise2.FileNotClosedAliasing: void test4()>
+	 In Fact: []
+	    Stmt: this := @this: target.exercise2.FileNotClosedAliasing
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: $stack4 = new target.exercise2.File
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: specialinvoke $stack4.<target.exercise2.File: void <init>()>()
+	Out Fact: [([$stack4], Init)]
+
+	 In Fact: [([$stack4], Init)]
+	    Stmt: virtualinvoke $stack4.<target.exercise2.File: void open()>()
+	Out Fact: [([$stack4], Open)]
+
+	 In Fact: [([$stack4], Open)]
+	    Stmt: virtualinvoke $stack4.<target.exercise2.File: void open()>()
+	Out Fact: [([$stack4], Open)]
+
+	 In Fact: [([$stack4], Open)]
+	    Stmt: virtualinvoke $stack4.<target.exercise2.File: void open()>()
+	Out Fact: [([$stack4], Open)]
+
+	 In Fact: [([$stack4], Open)]
+	    Stmt: return
+	Out Fact: [([$stack4], Open)]
+
+]]></system-out>
+    <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Vulnerability found in method <target.exercise2.FileNotClosedAliasing: void test1()> at return
+Vulnerability found in method <target.exercise2.FileNotClosedAliasing: void test2()> at return
+Vulnerability found in method <target.exercise2.FileNotClosedAliasing: void test3()> at return
+Vulnerability found in method <target.exercise2.FileNotClosedAliasing: void test4()> at return
+]]></system-err>
+  </testcase>
+  <testcase name="testFileClosed" classname="exercises.Exercise2Test" time="3.23">
+    <system-out><![CDATA[Method: <target.exercise2.FileClosed: void <init>()>
+	 In Fact: []
+	    Stmt: this := @this: target.exercise2.FileClosed
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: specialinvoke this.<java.lang.Object: void <init>()>()
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: return
+	Out Fact: []
+
+Method: <target.exercise2.FileClosed: void test1()>
+	 In Fact: []
+	    Stmt: this := @this: target.exercise2.FileClosed
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: $stack2 = new target.exercise2.File
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: specialinvoke $stack2.<target.exercise2.File: void <init>()>()
+	Out Fact: [([$stack2], Init)]
+
+	 In Fact: [([$stack2], Init)]
+	    Stmt: virtualinvoke $stack2.<target.exercise2.File: void open()>()
+	Out Fact: [([$stack2], Open)]
+
+	 In Fact: [([$stack2], Open)]
+	    Stmt: virtualinvoke $stack2.<target.exercise2.File: void close()>()
+	Out Fact: [([$stack2], Close)]
+
+	 In Fact: [([$stack2], Close)]
+	    Stmt: return
+	Out Fact: [([$stack2], Close)]
+
+Method: <target.exercise2.FileClosed: void test2()>
+	 In Fact: []
+	    Stmt: this := @this: target.exercise2.FileClosed
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: $stack2 = new target.exercise2.File
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: specialinvoke $stack2.<target.exercise2.File: void <init>()>()
+	Out Fact: [([$stack2], Init)]
+
+	 In Fact: [([$stack2], Init)]
+	    Stmt: virtualinvoke $stack2.<target.exercise2.File: void open()>()
+	Out Fact: [([$stack2], Open)]
+
+	 In Fact: [([$stack2], Open)]
+	    Stmt: $stack3 = virtualinvoke $stack2.<target.exercise2.File: int size()>()
+	Out Fact: [([$stack2], Open)]
+
+	 In Fact: [([$stack2], Open)]
+	    Stmt: if $stack3 <= 1024 goto virtualinvoke $stack2.<target.exercise2.File: void close()>()
+	Out Fact: [([$stack2], Open)]
+
+	 In Fact: [([$stack2], Open)]
+	    Stmt: virtualinvoke $stack2.<target.exercise2.File: void close()>()
+	Out Fact: [([$stack2], Close)]
+
+	 In Fact: [([$stack2], Open)]
+	    Stmt: virtualinvoke $stack2.<target.exercise2.File: void close()>()
+	Out Fact: [([$stack2], Close)]
+
+	 In Fact: [([$stack2], Close)]
+	    Stmt: goto [?= return]
+	Out Fact: [([$stack2], Close)]
+
+	 In Fact: [([$stack2], Close)]
+	    Stmt: return
+	Out Fact: [([$stack2], Close)]
+
+]]></system-out>
+  </testcase>
+  <testcase name="testFileClosedAliasing" classname="exercises.Exercise2Test" time="2.849">
+    <system-out><![CDATA[Method: <target.exercise2.FileClosedAliasing: void <init>()>
+	 In Fact: []
+	    Stmt: this := @this: target.exercise2.FileClosedAliasing
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: specialinvoke this.<java.lang.Object: void <init>()>()
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: return
+	Out Fact: []
+
+Method: <target.exercise2.FileClosedAliasing: void test1()>
+	 In Fact: []
+	    Stmt: this := @this: target.exercise2.FileClosedAliasing
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: $stack3 = new target.exercise2.File
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: specialinvoke $stack3.<target.exercise2.File: void <init>()>()
+	Out Fact: [([$stack3], Init)]
+
+	 In Fact: [([$stack3], Init)]
+	    Stmt: virtualinvoke $stack3.<target.exercise2.File: void open()>()
+	Out Fact: [([$stack3], Open)]
+
+	 In Fact: [([$stack3], Open)]
+	    Stmt: virtualinvoke $stack3.<target.exercise2.File: void close()>()
+	Out Fact: [([$stack3], Close)]
+
+	 In Fact: [([$stack3], Close)]
+	    Stmt: return
+	Out Fact: [([$stack3], Close)]
+
+Method: <target.exercise2.FileClosedAliasing: void test2()>
+	 In Fact: []
+	    Stmt: this := @this: target.exercise2.FileClosedAliasing
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: $stack2 = new target.exercise2.File
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: specialinvoke $stack2.<target.exercise2.File: void <init>()>()
+	Out Fact: [([$stack2], Init)]
+
+	 In Fact: [([$stack2, <target.exercise2.FileClosedAliasing: target.exercise2.File staticFile>], Init)]
+	    Stmt: <target.exercise2.FileClosedAliasing: target.exercise2.File staticFile> = $stack2
+	Out Fact: [([$stack2, <target.exercise2.FileClosedAliasing: target.exercise2.File staticFile>], Init)]
+
+	 In Fact: [([$stack2, file, <target.exercise2.FileClosedAliasing: target.exercise2.File staticFile>], Init)]
+	    Stmt: file = <target.exercise2.FileClosedAliasing: target.exercise2.File staticFile>
+	Out Fact: [([$stack2, file, <target.exercise2.FileClosedAliasing: target.exercise2.File staticFile>], Init)]
+
+	 In Fact: [([$stack2, file, <target.exercise2.FileClosedAliasing: target.exercise2.File staticFile>, $stack3], Init)]
+	    Stmt: $stack3 = <target.exercise2.FileClosedAliasing: target.exercise2.File staticFile>
+	Out Fact: [([$stack2, file, <target.exercise2.FileClosedAliasing: target.exercise2.File staticFile>, $stack3], Init)]
+
+	 In Fact: [([$stack2, file, <target.exercise2.FileClosedAliasing: target.exercise2.File staticFile>, $stack3], Init)]
+	    Stmt: virtualinvoke $stack3.<target.exercise2.File: void open()>()
+	Out Fact: [([$stack2, file, <target.exercise2.FileClosedAliasing: target.exercise2.File staticFile>, $stack3], Open)]
+
+	 In Fact: [([$stack2, file, <target.exercise2.FileClosedAliasing: target.exercise2.File staticFile>, $stack3], Open)]
+	    Stmt: virtualinvoke file.<target.exercise2.File: void close()>()
+	Out Fact: [([$stack2, file, <target.exercise2.FileClosedAliasing: target.exercise2.File staticFile>, $stack3], Close)]
+
+	 In Fact: [([$stack2, file, <target.exercise2.FileClosedAliasing: target.exercise2.File staticFile>, $stack3], Close)]
+	    Stmt: return
+	Out Fact: [([$stack2, file, <target.exercise2.FileClosedAliasing: target.exercise2.File staticFile>, $stack3], Close)]
+
+]]></system-out>
+  </testcase>
+  <testcase name="testFileNotClosed" classname="exercises.Exercise2Test" time="2.598">
+    <system-out><![CDATA[Method: <target.exercise2.FileNotClosed: void <init>()>
+	 In Fact: []
+	    Stmt: this := @this: target.exercise2.FileNotClosed
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: specialinvoke this.<java.lang.Object: void <init>()>()
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: return
+	Out Fact: []
+
+Method: <target.exercise2.FileNotClosed: void test1()>
+	 In Fact: []
+	    Stmt: this := @this: target.exercise2.FileNotClosed
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: $stack2 = new target.exercise2.File
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: specialinvoke $stack2.<target.exercise2.File: void <init>()>()
+	Out Fact: [([$stack2], Init)]
+
+	 In Fact: [([$stack2], Init)]
+	    Stmt: virtualinvoke $stack2.<target.exercise2.File: void open()>()
+	Out Fact: [([$stack2], Open)]
+
+	 In Fact: [([$stack2], Open)]
+	    Stmt: return
+	Out Fact: [([$stack2], Open)]
+
+Method: <target.exercise2.FileNotClosed: void test2()>
+	 In Fact: []
+	    Stmt: this := @this: target.exercise2.FileNotClosed
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: $stack2 = new target.exercise2.File
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: specialinvoke $stack2.<target.exercise2.File: void <init>()>()
+	Out Fact: [([$stack2], Init)]
+
+	 In Fact: [([$stack2], Init)]
+	    Stmt: virtualinvoke $stack2.<target.exercise2.File: void open()>()
+	Out Fact: [([$stack2], Open)]
+
+	 In Fact: [([$stack2], Open)]
+	    Stmt: $stack3 = new target.exercise2.File
+	Out Fact: [([$stack2], Open)]
+
+	 In Fact: [([$stack2], Open)]
+	    Stmt: specialinvoke $stack3.<target.exercise2.File: void <init>()>()
+	Out Fact: [([$stack3], Init), ([$stack2], Open)]
+
+	 In Fact: [([$stack3], Init), ([$stack2], Open)]
+	    Stmt: virtualinvoke $stack3.<target.exercise2.File: void close()>()
+	Out Fact: [([$stack3], Close), ([$stack2], Open)]
+
+	 In Fact: [([$stack3], Close), ([$stack2], Open)]
+	    Stmt: return
+	Out Fact: [([$stack3], Close), ([$stack2], Open)]
+
+Method: <target.exercise2.FileNotClosed: void test3()>
+	 In Fact: []
+	    Stmt: this := @this: target.exercise2.FileNotClosed
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: $stack2 = new target.exercise2.File
+	Out Fact: []
+
+	 In Fact: []
+	    Stmt: specialinvoke $stack2.<target.exercise2.File: void <init>()>()
+	Out Fact: [([$stack2], Init)]
+
+	 In Fact: [([$stack2], Init)]
+	    Stmt: virtualinvoke $stack2.<target.exercise2.File: void open()>()
+	Out Fact: [([$stack2], Open)]
+
+	 In Fact: [([$stack2], Open)]
+	    Stmt: virtualinvoke $stack2.<target.exercise2.File: void close()>()
+	Out Fact: [([$stack2], Close)]
+
+	 In Fact: [([$stack2], Close)]
+	    Stmt: virtualinvoke $stack2.<target.exercise2.File: void open()>()
+	Out Fact: [([$stack2], Open)]
+
+	 In Fact: [([$stack2], Open)]
+	    Stmt: return
+	Out Fact: [([$stack2], Open)]
+
+]]></system-out>
+    <system-err><![CDATA[Vulnerability found in method <target.exercise2.FileNotClosed: void test1()> at return
+Vulnerability found in method <target.exercise2.FileNotClosed: void test2()> at return
+Vulnerability found in method <target.exercise2.FileNotClosed: void test3()> at return
+]]></system-err>
+  </testcase>
+</testsuite>

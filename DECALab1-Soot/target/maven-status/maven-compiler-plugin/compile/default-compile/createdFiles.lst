@@ -1,0 +1,7 @@
+analysis/ForwardAnalysis.class
+analysis/exercise1/MisuseAnalysis.class
+analysis/FileStateFact.class
+analysis/exercise2/TypeStateAnalysis.class
+analysis/FileState.class
+analysis/VulnerabilityReporter.class
+analysis/AbstractAnalysis.class
