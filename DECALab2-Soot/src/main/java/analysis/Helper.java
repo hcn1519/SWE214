@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Helper {
-    public static SootMethod targetMethod(Unit unit) {
+    public static SootMethod methodInUnit(Unit unit) {
         if (unit instanceof soot.jimple.internal.JAssignStmt) {
             JAssignStmt assignStmt = (JAssignStmt) unit;
             if (assignStmt.containsInvokeExpr())

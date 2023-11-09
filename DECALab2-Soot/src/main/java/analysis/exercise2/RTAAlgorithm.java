@@ -18,8 +18,6 @@ public class RTAAlgorithm extends CHAAlgorithm  {
 
     @Override
     protected void populateCallGraph(Scene scene, CallGraph cg) {
-        // Your implementation goes here, also feel free to add methods as needed
-        // To get your entry points we prepared getEntryPoints(scene) in the superclass for you
         soot.Hierarchy hierarchy = scene.getActiveHierarchy();
         for (SootMethod rootMethod : this.getEntryPoints(scene).collect(Collectors.toList())) {
             Queue<SootMethod> queue = new ArrayDeque<>();
@@ -28,14 +26,12 @@ public class RTAAlgorithm extends CHAAlgorithm  {
 
             while (!queue.isEmpty()) {
                 SootMethod srcMethod = queue.poll();
-
-                // If srcMethod does not have implementation, it becomes leaf node.
                 if (!srcMethod.hasActiveBody())
                     continue;
 
                 Body body = srcMethod.getActiveBody();
                 for (Unit unit : body.getUnits()) {
-                    SootMethod targetMethod = Helper.targetMethod(unit);
+                    SootMethod targetMethod = Helper.methodInUnit(unit);
                     if (targetMethod == null)
                         continue;
 

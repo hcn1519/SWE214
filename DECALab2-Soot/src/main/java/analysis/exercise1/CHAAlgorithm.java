@@ -17,9 +17,6 @@ public class CHAAlgorithm extends CallGraphAlgorithm {
 
     @Override
     protected void populateCallGraph(Scene scene, CallGraph cg) {
-        // Your implementation goes here, also feel free to add methods as needed
-        // To get your entry points we prepared getEntryPoints(scene) in the superclass for you
-
         soot.Hierarchy hierarchy = scene.getActiveHierarchy();
         for (SootMethod rootMethod : this.getEntryPoints(scene).collect(Collectors.toList())) {
             Queue<SootMethod> queue = new ArrayDeque<>();
@@ -34,7 +31,7 @@ public class CHAAlgorithm extends CallGraphAlgorithm {
 
                 Body body = srcMethod.getActiveBody();
                 for (Unit unit : body.getUnits()) {
-                    SootMethod targetMethod = Helper.targetMethod(unit);
+                    SootMethod targetMethod = Helper.methodInUnit(unit);
                     if (targetMethod == null)
                         continue;
 
