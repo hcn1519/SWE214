@@ -10,15 +10,13 @@ import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.MultiGraph;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import soot.Scene;
-import soot.SootClass;
-import soot.Value;
-import soot.jimple.FieldRef;
+import soot.*;
+import soot.jimple.*;
+import soot.jimple.internal.JAssignStmt;
+import soot.jimple.internal.JInvokeStmt;
+import soot.jimple.internal.JNewExpr;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class VTAAlgorithm extends CallGraphAlgorithm {
@@ -33,10 +31,170 @@ public class VTAAlgorithm extends CallGraphAlgorithm {
     @Override
     protected void populateCallGraph(Scene scene, CallGraph cg) {
         CallGraph initialCallGraph = new CHAAlgorithm().constructCallGraph(scene);
+        TypeAssignmentGraph typeAssignmentGraph = new TypeAssignmentGraph();
+        List<SootMethod> entries = this.getEntryPoints(scene).collect(Collectors.toList());
+        Set<Value> variablesForDebugging = new HashSet<>();
 
-        // Your implementation goes here, also feel free to add methods as needed
-        // To get your entry points we prepared getEntryPoints(scene) in the superclass for you
+        for (SootMethod entry : entries) {
+            Queue<SootMethod> queue = new ArrayDeque<>();
+            queue.add(entry);
 
+            while (!queue.isEmpty()) {
+                SootMethod srcMethod = queue.poll();
+                if (!srcMethod.hasActiveBody())
+                    continue;
+
+                Body body = srcMethod.getActiveBody();
+                for (Unit unit : body.getUnits()) {
+
+                    if ((unit instanceof JAssignStmt)) {
+                        JAssignStmt assignStmt = (JAssignStmt) unit;
+                        Value lhs = assignStmt.getLeftOp();
+                        Value rhs = assignStmt.getRightOp();
+                        variablesForDebugging.add(lhs);
+                        typeAssignmentGraph.addNode(lhs);
+
+                        if (rhs instanceof JNewExpr) {
+                            JNewExpr newExpr = (JNewExpr) rhs;
+                            SootClass classTag = scene.getSootClass(newExpr.getType().toString());
+                            typeAssignmentGraph.tagNode(lhs, classTag);
+//                            System.out.println("newExpr : " + lhs + " = " + classTag);
+                        } else if (rhs instanceof InvokeExpr) {
+                            InvokeExpr invokeExpr = (InvokeExpr) rhs;
+                            this.addEdge(typeAssignmentGraph, invokeExpr);
+                            SootMethod method = invokeExpr.getMethod();
+                            SootClass classTag = scene.getSootClass(method.getReturnType().toString());
+                            typeAssignmentGraph.tagNode(lhs, classTag);
+
+                            Set<SootMethod>destinations = initialCallGraph.edgesOutOf(method);
+                            for (SootMethod dest : destinations) {
+//                                System.out.println("dest : " + dest);
+                                queue.add(dest);
+                            }
+                        } else {
+                            if (!(rhs instanceof Constant)) {
+                                typeAssignmentGraph.addNode(rhs);
+                                typeAssignmentGraph.addEdge(rhs, lhs);
+                            } else {
+                                System.out.println("What else? " + assignStmt);
+                            }
+                        }
+                    } else if (unit instanceof JInvokeStmt) {
+                        JInvokeStmt invokeStmt = (JInvokeStmt) unit;
+                        InvokeExpr invokeExpr = invokeStmt.getInvokeExpr();
+                        this.addEdge(typeAssignmentGraph, invokeExpr);
+                        SootMethod method = invokeExpr.getMethod();
+
+                        Set<SootMethod>destinations = initialCallGraph.edgesOutOf(method);
+                        for (SootMethod dest : destinations) {
+//                            System.out.println("dest : " + dest);
+                            queue.add(dest);
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println("tagged before " + typeAssignmentGraph.getTaggedNodes());
+        propagateType(typeAssignmentGraph);
+
+        // strong connected components
+//        for (Pair<Value, Set<SootClass>> node : typeAssignmentGraph.getTaggedNodes()) {
+//            Object scc = typeAssignmentGraph.getSccIndex(node.first);
+//            System.out.println("scc " + scc);
+//        }
+        typeAssignmentGraph.draw();
+        System.out.println("tagged after" + typeAssignmentGraph.getTaggedNodes());
+        System.out.println(variablesForDebugging);
+
+        // create pruned call graph
+        // Infer what types the objects involved in a call may have
+        // Prune calls that are infeasible based on the inferred types
+        for (SootMethod entry : entries) {
+            Queue<SootMethod> queue = new ArrayDeque<>();
+            queue.add(entry);
+
+            while (!queue.isEmpty()) {
+                SootMethod srcMethod = queue.poll();
+                if (!cg.hasNode(srcMethod))
+                    cg.addNode(srcMethod);
+
+                Set<SootMethod> targets = initialCallGraph.edgesOutOf(srcMethod);
+                for (SootMethod target : targets) {
+                    if (!isFeasibleMethod(typeAssignmentGraph, srcMethod, target))
+                        continue;
+
+                    if (!cg.hasNode(target))
+                        cg.addNode(target);
+                    if (!cg.hasEdge(srcMethod, target)) {
+                        cg.addEdge(srcMethod, target);
+                        queue.add(target);
+                    }
+                }
+            }
+        }
+    }
+
+    private boolean isFeasibleMethod(TypeAssignmentGraph typeAssignmentGraph, SootMethod src, SootMethod dest) {
+        SootClass srcClass = src.getDeclaringClass();
+        SootClass destClass = dest.getDeclaringClass();
+
+        Queue<Value> queue = new ArrayDeque<>();
+
+        for (Pair<Value, Set<SootClass>> pair : typeAssignmentGraph.getTaggedNodes()) {
+            if (pair.second.contains(destClass)) {
+                queue.add(pair.first);
+            }
+        }
+
+        while (!queue.isEmpty()) {
+            Value srcValue = queue.poll();
+            if (typeAssignmentGraph.getNodeTags(srcValue).contains(destClass))
+                return true;
+            queue.addAll(typeAssignmentGraph.getTargetsFor(srcValue));
+        }
+
+        return false;
+    }
+
+    private void propagateType(TypeAssignmentGraph typeAssignmentGraph) {
+        Queue<Pair<Value, Set<SootClass>>> queue = new ArrayDeque<>();
+        for (Pair<Value, Set<SootClass>> pair : typeAssignmentGraph.getTaggedNodes()) {
+            queue.add(pair);
+
+            while (!queue.isEmpty()) {
+                Pair<Value, Set<SootClass>> src = queue.poll();
+                Set<Value> targets = typeAssignmentGraph.getTargetsFor(src.first);
+                Set<SootClass> classes = src.second;
+
+                for (Value target : targets) {
+                    for (SootClass cls: src.second) {
+                        typeAssignmentGraph.tagNode(target, cls);
+                    }
+                    queue.add(new Pair<Value, Set<SootClass>>(target, typeAssignmentGraph.getNodeTags(target)));
+                }
+            }
+        }
+    }
+
+    private void addEdge(TypeAssignmentGraph typeAssignmentGraph, InvokeExpr invokeExpr) {
+        List<Value> args = invokeExpr.getArgs();
+        SootMethod method = invokeExpr.getMethod();
+
+        for (int i = 0; i < args.size(); i++) {
+            Value arg = args.get(i);
+            if (!(arg instanceof Constant) && (method.hasActiveBody())) {
+                List<Value> parameterRefs = method.getActiveBody().getParameterRefs();
+
+                for (Value value : parameterRefs) {
+                    ParameterRef parameterRef = (ParameterRef) value;
+                    if (i == parameterRef.getIndex()) {
+                        typeAssignmentGraph.addNode(arg);
+                        typeAssignmentGraph.addNode(parameterRef);
+                        typeAssignmentGraph.addEdge(arg, value);
+                    }
+                }
+            }
+        }
     }
 
 
@@ -62,7 +220,8 @@ public class VTAAlgorithm extends CallGraphAlgorithm {
         }
 
         private String createId(Value value) {
-            if (value instanceof FieldRef) return value.toString();
+            if (value instanceof FieldRef)
+                return value.toString();
             return Integer.toHexString(System.identityHashCode(value));
         }
 
@@ -127,7 +286,8 @@ public class VTAAlgorithm extends CallGraphAlgorithm {
          * @return
          */
         public Object getSccIndex(Value value) {
-            if(!containsNode(value)) return null;
+            if(!containsNode(value))
+                return null;
             return graph.getNode(createId(value)).getAttribute(tscc.getSCCIndexAttribute());
         }
 
