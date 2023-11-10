@@ -39,17 +39,12 @@ public class VTAAlgorithm extends CallGraphAlgorithm {
         for (SootMethod entry : entries) {
             this.buildTypeAssignmentGraph(scene, entry, initialCallGraph, typeAssignmentGraph);
         }
-        // 2. Propagate type in TypeAssignmentGraph
+
+        // 2. Collapse Strong connected components
+        typeAssignmentGraph.annotateScc();
+
+        // 3. Propagate type in TypeAssignmentGraph
         this.propagateType(typeAssignmentGraph);
-
-//        typeAssignmentGraph.draw();
-        System.out.println("Tagged Nodes " + typeAssignmentGraph.getTaggedNodes());
-
-//        // 3. Resolve Strong connected components
-//        for (Pair<Value, Set<SootClass>> node : typeAssignmentGraph.getTaggedNodes()) {
-//            Object scc = typeAssignmentGraph.getSccIndex(node.first);
-//            System.out.println("scc " + scc);
-//        }
 
         // 4. create pruned call graph
         // Infer what types the objects involved in a call may have
@@ -198,7 +193,7 @@ public class VTAAlgorithm extends CallGraphAlgorithm {
                     for (SootClass cls: src.second) {
                         typeAssignmentGraph.tagNode(target, cls);
                     }
-                    queue.add(new Pair<Value, Set<SootClass>>(target, typeAssignmentGraph.getNodeTags(target)));
+                    queue.add(new Pair<>(target, typeAssignmentGraph.getNodeTags(target)));
                 }
             }
         }
@@ -313,8 +308,7 @@ public class VTAAlgorithm extends CallGraphAlgorithm {
          * @return
          */
         public Object getSccIndex(Value value) {
-            if(!containsNode(value))
-                return null;
+            if(!containsNode(value)) return null;
             return graph.getNode(createId(value)).getAttribute(tscc.getSCCIndexAttribute());
         }
 
