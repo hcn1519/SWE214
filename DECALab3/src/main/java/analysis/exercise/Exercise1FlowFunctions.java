@@ -1,6 +1,7 @@
 package analysis.exercise;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 
 import com.google.common.collect.Sets;
@@ -13,9 +14,7 @@ import soot.Local;
 import soot.SootMethod;
 import soot.Unit;
 import soot.Value;
-import soot.jimple.AssignStmt;
-import soot.jimple.InstanceInvokeExpr;
-import soot.jimple.Stmt;
+import soot.jimple.*;
 
 public class Exercise1FlowFunctions extends TaintAnalysisFlowFunctions {
 
@@ -63,8 +62,12 @@ public class Exercise1FlowFunctions extends TaintAnalysisFlowFunctions {
 				out.add(val);
 				modelStringOperations(val, out, callSiteStmt);
 				
-				if(val.equals(DataFlowFact.zero())){
-					//TODO: Implement Exercise 1a) here
+				if (val.equals(DataFlowFact.zero())) {
+					if (callSiteStmt instanceof DefinitionStmt) {
+						Value lhs = ((DefinitionStmt) callSiteStmt).getLeftOp();
+						DataFlowFact lhsDataFlowFact = dataFlowfact(lhs);
+						out.add(lhsDataFlowFact);
+					}
 				}
 				if(call instanceof Stmt && call.toString().contains("executeQuery")){
 					Stmt stmt = (Stmt) call;
