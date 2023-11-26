@@ -38,7 +38,15 @@ public class Exercise1FlowFunctions extends TaintAnalysisFlowFunctions {
 					return out;
 				}
 				Stmt callSiteStmt = (Stmt) callSite;
-				//TODO: Implement Exercise 1c) here
+				InvokeExpr callSiteStmtInvokeExpr = callSiteStmt.getInvokeExpr();
+				List<Value> callSiteArgs = callSiteStmtInvokeExpr.getArgs();
+
+				for (int i = 0; i < callSiteArgs.size(); i++) {
+					Value callSiteArg = callSiteArgs.get(i);
+					if (fact.getVariable().equivTo(callSiteArg)) {
+						out.add(dataFlowfact(callSiteArg));
+					}
+				}
 				return out;
 			}
 		};
