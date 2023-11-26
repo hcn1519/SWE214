@@ -98,15 +98,41 @@ public class Exercise1FlowFunctions extends TaintAnalysisFlowFunctions {
 			}
 		}
 	}
+
+	private DataFlowFact dataFlowfact(Value value) {
+		if (value instanceof Local)
+			return new DataFlowFact((Local)value);
+
+		if (value instanceof InstanceFieldRef) {
+			Local local = (Local) ((InstanceFieldRef) value).getBase();
+			return new DataFlowFact(local);
+		}
+		return null;
+	}
+
 	@Override
 	public FlowFunction<DataFlowFact> getNormalFlowFunction(final Unit curr, Unit succ) {
 		return new FlowFunction<DataFlowFact>() {
 			@Override
 			public Set<DataFlowFact> computeTargets(DataFlowFact fact) {
 				prettyPrint(curr, fact);
+				if (!(curr instanceof DefinitionStmt))
+					return Collections.emptySet();
+
 				Set<DataFlowFact> out = Sets.newHashSet();
+				DefinitionStmt definitionStmt = (DefinitionStmt) curr;
+				Value lhs = definitionStmt.getLeftOp();
+
+				if (fact == DataFlowFact.zero()) {
+					DataFlowFact lhsDataFlowFact = dataFlowfact(lhs);
+					out.add(lhsDataFlowFact);
+					return out;
+				}
+				Local factLocal = fact.getVariable();
+				if (factLocal.equivTo(lhs))
+					return out;
+
 				out.add(fact);
-				//TODO: Implement Exercise 1b) here
 				return out;
 			}
 		};
