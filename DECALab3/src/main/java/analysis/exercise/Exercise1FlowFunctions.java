@@ -40,8 +40,7 @@ public class Exercise1FlowFunctions extends TaintAnalysisFlowFunctions {
 				InvokeExpr callSiteStmtInvokeExpr = callSiteStmt.getInvokeExpr();
 				List<Value> callSiteArgs = callSiteStmtInvokeExpr.getArgs();
 
-				for (int i = 0; i < callSiteArgs.size(); i++) {
-					Value callSiteArg = callSiteArgs.get(i);
+				for (Value callSiteArg : callSiteArgs) {
 					if (fact.getVariable().equivTo(callSiteArg)) {
 						out.add(dataFlowfact(callSiteArg));
 					}
@@ -56,7 +55,6 @@ public class Exercise1FlowFunctions extends TaintAnalysisFlowFunctions {
 
 			@Override
 			public Set<DataFlowFact> computeTargets(DataFlowFact val) {
-
 				Set<DataFlowFact> out = Sets.newHashSet();
 				Stmt callSiteStmt = (Stmt) call;
 				out.add(val);
@@ -128,9 +126,10 @@ public class Exercise1FlowFunctions extends TaintAnalysisFlowFunctions {
 			public Set<DataFlowFact> computeTargets(DataFlowFact fact) {
 				prettyPrint(curr, fact);
 				if (!(curr instanceof DefinitionStmt))
-					return Collections.emptySet();
+					return Collections.singleton(fact);
 
 				Set<DataFlowFact> out = Sets.newHashSet();
+				out.add(fact);
 				DefinitionStmt definitionStmt = (DefinitionStmt) curr;
 				Value lhs = definitionStmt.getLeftOp();
 
@@ -139,11 +138,10 @@ public class Exercise1FlowFunctions extends TaintAnalysisFlowFunctions {
 					out.add(lhsDataFlowFact);
 					return out;
 				}
-				Local factLocal = fact.getVariable();
-				if (factLocal.equivTo(lhs))
-					return out;
 
-				out.add(fact);
+				if (fact.getVariable().equivTo(lhs))
+					return Collections.emptySet();
+
 				return out;
 			}
 		};
