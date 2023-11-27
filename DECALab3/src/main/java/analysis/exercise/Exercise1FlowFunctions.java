@@ -10,6 +10,8 @@ import analysis.TaintAnalysisFlowFunctions;
 import analysis.VulnerabilityReporter;
 import analysis.fact.DataFlowFact;
 import heros.FlowFunction;
+import polyglot.ast.Assign;
+import polyglot.ext.param.types.Param;
 import soot.Local;
 import soot.SootMethod;
 import soot.Unit;
@@ -26,6 +28,7 @@ public class Exercise1FlowFunctions extends TaintAnalysisFlowFunctions {
 
 	@Override
 	public FlowFunction<DataFlowFact> getCallFlowFunction(Unit callSite, SootMethod callee) {
+
 		return new FlowFunction<DataFlowFact>() {
 			@Override
 			public Set<DataFlowFact> computeTargets(DataFlowFact fact) {
@@ -33,16 +36,17 @@ public class Exercise1FlowFunctions extends TaintAnalysisFlowFunctions {
 					return Collections.emptySet();
 				prettyPrint(callSite, fact);
 				Set<DataFlowFact> out = Sets.newHashSet();
-				if(!(callSite instanceof Stmt)){
-					return out;
-				}
-				Stmt callSiteStmt = (Stmt) callSite;
-				InvokeExpr callSiteStmtInvokeExpr = callSiteStmt.getInvokeExpr();
-				List<Value> callSiteArgs = callSiteStmtInvokeExpr.getArgs();
 
-				for (Value callSiteArg : callSiteArgs) {
-					if (fact.getVariable().equivTo(callSiteArg)) {
-						out.add(dataFlowfact(callSiteArg));
+				if(!(callSite instanceof Stmt) || !callee.hasActiveBody())
+					return out;
+
+				List<Value> callSiteArgs = ((Stmt) callSite).getInvokeExpr().getArgs();
+				List<Local> params = callee.getActiveBody().getParameterLocals();
+				Local factLocal = fact.getVariable();
+				for (int i = 0; i < callSiteArgs.size(); i++) {
+					Value callSiteArg = callSiteArgs.get(i);
+					if (factLocal.equivTo(callSiteArg)) {
+						out.add(dataFlowfact(params.get(i)));
 					}
 				}
 				return out;
@@ -55,16 +59,16 @@ public class Exercise1FlowFunctions extends TaintAnalysisFlowFunctions {
 
 			@Override
 			public Set<DataFlowFact> computeTargets(DataFlowFact val) {
+				prettyPrint(call, val);
 				Set<DataFlowFact> out = Sets.newHashSet();
 				Stmt callSiteStmt = (Stmt) call;
 				out.add(val);
 				modelStringOperations(val, out, callSiteStmt);
-				
+
 				if (val.equals(DataFlowFact.zero())) {
-					if (callSiteStmt instanceof DefinitionStmt) {
-						Value lhs = ((DefinitionStmt) callSiteStmt).getLeftOp();
-						DataFlowFact lhsDataFlowFact = dataFlowfact(lhs);
-						out.add(lhsDataFlowFact);
+					if (callSiteStmt instanceof AssignStmt) {
+						Value lhs = ((AssignStmt) callSiteStmt).getLeftOp();
+						out.add(dataFlowfact(lhs));
 					}
 				}
 				if(call instanceof Stmt && call.toString().contains("executeQuery")){
@@ -125,23 +129,34 @@ public class Exercise1FlowFunctions extends TaintAnalysisFlowFunctions {
 			@Override
 			public Set<DataFlowFact> computeTargets(DataFlowFact fact) {
 				prettyPrint(curr, fact);
-				if (!(curr instanceof DefinitionStmt))
+				if (!(curr instanceof AssignStmt))
 					return Collections.singleton(fact);
 
-				Set<DataFlowFact> out = Sets.newHashSet();
-				out.add(fact);
-				DefinitionStmt definitionStmt = (DefinitionStmt) curr;
-				Value lhs = definitionStmt.getLeftOp();
+				AssignStmt assignStmt = (AssignStmt) curr;
+				Value lhs = assignStmt.getLeftOp();
+				Value rhs = assignStmt.getRightOp();
 
-				if (fact == DataFlowFact.zero()) {
-					DataFlowFact lhsDataFlowFact = dataFlowfact(lhs);
-					out.add(lhsDataFlowFact);
-					return out;
+				// kill lhs if rhs is Constant
+				if (rhs instanceof Constant) {
+					// kill, i.e. y = 0, <fact = y>
+					if (lhs.equivTo(fact.getVariable())) {
+						return Collections.emptySet();
+					}
+					// keep, i.e. y = 0, <fact = ZERO>
+					return Collections.singleton(fact);
 				}
 
-				if (fact.getVariable().equivTo(lhs))
-					return Collections.emptySet();
+				// keep prev fact if rhs is not related to fact
+				// i.e. stmt: x = y; <fact = this>
+				if (!rhs.equivTo(fact.getVariable())) {
+					return Collections.singleton(fact);
+				}
 
+				// gen lhs dataflow fact
+				Set<DataFlowFact> out = Sets.newHashSet();
+				out.add(fact);
+				DataFlowFact lhsDataFlowFact = dataFlowfact(lhs);
+				out.add(lhsDataFlowFact);
 				return out;
 			}
 		};
