@@ -1,6 +1,7 @@
 package analysis.exercise;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 
 import com.google.common.collect.Sets;
@@ -9,15 +10,15 @@ import analysis.TaintAnalysisFlowFunctions;
 import analysis.VulnerabilityReporter;
 import analysis.fact.DataFlowFact;
 import heros.FlowFunction;
+import polyglot.visit.DataFlow;
 import soot.Local;
 import soot.SootField;
 import soot.SootMethod;
 import soot.Unit;
 import soot.Value;
-import soot.jimple.AssignStmt;
-import soot.jimple.InstanceFieldRef;
-import soot.jimple.InstanceInvokeExpr;
-import soot.jimple.Stmt;
+import soot.jimple.*;
+import soot.jimple.internal.JInstanceFieldRef;
+import soot.jimple.toolkits.scalar.pre.SootFilter;
 
 public class Exercise2FlowFunctions extends TaintAnalysisFlowFunctions {
 
@@ -34,14 +35,24 @@ public class Exercise2FlowFunctions extends TaintAnalysisFlowFunctions {
 			public Set<DataFlowFact> computeTargets(DataFlowFact fact) {
 				if(fact.equals(DataFlowFact.zero()))
 					return Collections.emptySet();
-				prettyPrint(callSite, fact);
+//				prettyPrint(callSite, fact);
+//				System.out.println("CallSite: " + callSite + ", fact : " + fact);
+//				System.out.println("callee : " + callee);
 				Set<DataFlowFact> out = Sets.newHashSet();
-				if(!(callSite instanceof Stmt)){
+
+				if(!(callSite instanceof Stmt) || !callee.hasActiveBody())
 					return out;
+
+				List<Value> callSiteArgs = ((Stmt) callSite).getInvokeExpr().getArgs();
+				List<Local> params = callee.getActiveBody().getParameterLocals();
+				Local factLocal = fact.getVariable();
+				for (int i = 0; i < callSiteArgs.size(); i++) {
+					Value callSiteArg = callSiteArgs.get(i);
+					if (factLocal.equivTo(callSiteArg)) {
+						out.add(fieldBasedDataflowFact(params.get(i)));
+					}
 				}
-				Stmt callSiteStmt = (Stmt) callSite;
-				//TODO: Implement Exercise 1c) here
-				//TODO: Implement interprocedural part of Exercise 2 here
+				System.out.println("call2 " + out);
 				return out;
 			}
 
@@ -59,9 +70,13 @@ public class Exercise2FlowFunctions extends TaintAnalysisFlowFunctions {
 				Stmt callSiteStmt = (Stmt) call;
 				out.add(val);
 				modelStringOperations(val, out, callSiteStmt);
-				
-				if(val.equals(DataFlowFact.zero())){
-					//TODO: Implement Exercise 1a) here
+
+				if (val.equals(DataFlowFact.zero())) {
+					if (callSiteStmt instanceof AssignStmt) {
+						Value lhs = ((AssignStmt) callSiteStmt).getLeftOp();
+						System.out.println("lhs " + lhs);
+						out.add(fieldBasedDataflowFact(lhs));
+					}
 				}
 				if(call instanceof Stmt && call.toString().contains("executeQuery")){
 					Stmt stmt = (Stmt) call;
@@ -103,17 +118,68 @@ public class Exercise2FlowFunctions extends TaintAnalysisFlowFunctions {
 			}
 		}
 	}
+	private DataFlowFact fieldBasedDataflowFact(Value value) {
+		if (value instanceof Local) {
+			return new DataFlowFact((Local) value);
+		} else if (value instanceof InstanceFieldRef) {
+			SootField field = ((InstanceFieldRef) value).getField();
+			return new DataFlowFact(field);
+		}
+
+		return null;
+	}
+
+	private void gen(Value lhs, DataFlowFact fact, Set<DataFlowFact> out) {
+		DataFlowFact lhsDataFlowFact = fieldBasedDataflowFact(lhs);
+		out.add(lhsDataFlowFact);
+		out.add(fact);
+	}
+
 	@Override
 	public FlowFunction<DataFlowFact> getNormalFlowFunction(final Unit curr, Unit succ) {
 		return new FlowFunction<DataFlowFact>() {
 			@Override
 			public Set<DataFlowFact> computeTargets(DataFlowFact fact) {
 				prettyPrint(curr, fact);
+				if (!(curr instanceof AssignStmt))
+					return Collections.singleton(fact);
+
+				AssignStmt assignStmt = (AssignStmt) curr;
+				Value lhs = assignStmt.getLeftOp();
+				Value rhs = assignStmt.getRightOp();
+
+				// kill lhs if rhs is Constant
+				if (rhs instanceof Constant) {
+					// kill, i.e. y = 0, <fact = y>
+					if (fact.getVariable() != null && fact.getVariable().equivTo(lhs)) {
+						return Collections.emptySet();
+					}
+					// kill, i.e. y.f = 0, <fact = y.f>
+					if (fact.getField() != null && lhs instanceof InstanceFieldRef) {
+						SootField factField = fact.getField();
+						SootField lhsField = ((InstanceFieldRef)lhs).getField();
+						if (factField.equals(lhsField))
+							return Collections.emptySet();
+					}
+
+					// keep, i.e. y = 0 or y.f = 0, <fact = ZERO>
+					return Collections.singleton(fact);
+				}
+
 				Set<DataFlowFact> out = Sets.newHashSet();
 				out.add(fact);
 
-				//TODO: Implement Exercise 1a) here
-				//TODO: Implement cases for field load and field store statement of Exercise 2) here
+				// i.e. stmt: x = y; <fact = y>
+				if (fact.getVariable() != null && fact.getVariable().equivTo(rhs)) {
+					gen(lhs, fact, out);
+				}
+				// i.e. stmt: x = y.f; <fact = y.f>
+				if (fact.getField() != null && rhs instanceof InstanceFieldRef) {
+					SootField factField = fact.getField();
+					SootField rhsField = ((InstanceFieldRef)rhs).getField();
+					if (factField.equals(rhsField))
+						gen(lhs, fact, out);
+				}
 				return out;
 			}
 		};
