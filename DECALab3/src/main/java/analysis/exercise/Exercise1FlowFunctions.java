@@ -1,5 +1,6 @@
 package analysis.exercise;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -40,13 +41,19 @@ public class Exercise1FlowFunctions extends TaintAnalysisFlowFunctions {
 				if(!(callSite instanceof Stmt) || !callee.hasActiveBody())
 					return out;
 
+				if (fact == DataFlowFact.zero()) {
+					out.add(fact);
+					return out;
+				}
+
 				List<Value> callSiteArgs = ((Stmt) callSite).getInvokeExpr().getArgs();
-				List<Local> params = callee.getActiveBody().getParameterLocals();
+				List<Local> paramLocals = callee.getActiveBody().getParameterLocals();
+
 				Local factLocal = fact.getVariable();
 				for (int i = 0; i < callSiteArgs.size(); i++) {
 					Value callSiteArg = callSiteArgs.get(i);
-					if (factLocal.equivTo(callSiteArg)) {
-						out.add(dataFlowfact(params.get(i)));
+					if (callSiteArg.equivTo(factLocal)) {
+						out.add(dataFlowfact(paramLocals.get(i)));
 					}
 				}
 				return out;
@@ -67,8 +74,10 @@ public class Exercise1FlowFunctions extends TaintAnalysisFlowFunctions {
 
 				if (val.equals(DataFlowFact.zero())) {
 					if (callSiteStmt instanceof AssignStmt) {
-						Value lhs = ((AssignStmt) callSiteStmt).getLeftOp();
-						out.add(dataFlowfact(lhs));
+						AssignStmt assignStmt = (AssignStmt) callSiteStmt;
+						Value lhs = ((DefinitionStmt) callSiteStmt).getLeftOp();
+						if (assignStmt.getInvokeExpr().toString().contains("getParameter"))
+							out.add(dataFlowfact(lhs));
 					}
 				}
 				if(call instanceof Stmt && call.toString().contains("executeQuery")){
