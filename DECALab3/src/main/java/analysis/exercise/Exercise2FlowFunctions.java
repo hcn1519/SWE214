@@ -35,28 +35,29 @@ public class Exercise2FlowFunctions extends TaintAnalysisFlowFunctions {
 			public Set<DataFlowFact> computeTargets(DataFlowFact fact) {
 				if(fact.equals(DataFlowFact.zero()))
 					return Collections.emptySet();
-//				prettyPrint(callSite, fact);
-//				System.out.println("CallSite: " + callSite + ", fact : " + fact);
-//				System.out.println("callee : " + callee);
+				prettyPrint(callSite, fact);
 				Set<DataFlowFact> out = Sets.newHashSet();
 
 				if(!(callSite instanceof Stmt) || !callee.hasActiveBody())
 					return out;
 
+				if (fact == DataFlowFact.zero()) {
+					out.add(fact);
+					return out;
+				}
+
 				List<Value> callSiteArgs = ((Stmt) callSite).getInvokeExpr().getArgs();
-				List<Local> params = callee.getActiveBody().getParameterLocals();
+				List<Local> paramLocals = callee.getActiveBody().getParameterLocals();
+
 				Local factLocal = fact.getVariable();
 				for (int i = 0; i < callSiteArgs.size(); i++) {
 					Value callSiteArg = callSiteArgs.get(i);
-					if (factLocal.equivTo(callSiteArg)) {
-						out.add(fieldBasedDataflowFact(params.get(i)));
+					if (callSiteArg.equivTo(factLocal)) {
+						out.add(fieldBasedDataflowFact(paramLocals.get(i)));
 					}
 				}
-				System.out.println("call2 " + out);
 				return out;
 			}
-
-			
 		};
 	}
 
@@ -65,7 +66,7 @@ public class Exercise2FlowFunctions extends TaintAnalysisFlowFunctions {
 
 			@Override
 			public Set<DataFlowFact> computeTargets(DataFlowFact val) {
-
+				prettyPrint(call, val);
 				Set<DataFlowFact> out = Sets.newHashSet();
 				Stmt callSiteStmt = (Stmt) call;
 				out.add(val);
@@ -73,9 +74,10 @@ public class Exercise2FlowFunctions extends TaintAnalysisFlowFunctions {
 
 				if (val.equals(DataFlowFact.zero())) {
 					if (callSiteStmt instanceof AssignStmt) {
-						Value lhs = ((AssignStmt) callSiteStmt).getLeftOp();
-						System.out.println("lhs " + lhs);
-						out.add(fieldBasedDataflowFact(lhs));
+						AssignStmt assignStmt = (AssignStmt) callSiteStmt;
+						Value lhs = ((DefinitionStmt) callSiteStmt).getLeftOp();
+						if (assignStmt.getInvokeExpr().toString().contains("getParameter"))
+							out.add(fieldBasedDataflowFact(lhs));
 					}
 				}
 				if(call instanceof Stmt && call.toString().contains("executeQuery")){
