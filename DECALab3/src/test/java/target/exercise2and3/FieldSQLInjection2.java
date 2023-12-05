@@ -11,12 +11,12 @@ public class FieldSQLInjection2 {
 		String userId = request.getParameter("userId");
 		ObjectWithTaint o = new ObjectWithTaint();
 		o.userInput = userId;
-		createQuery(o);
+		createQuery(o.userInput);
 
 	}
 
-	private void createQuery(ObjectWithTaint parameter) {
-		String loaded = parameter.userInput;
+	private void createQuery(String parameter) {
+		String loaded = parameter;
 		try {
 			Connection conn = DriverManager.getConnection("url", "userName", "password");
 			Statement st = conn.createStatement();

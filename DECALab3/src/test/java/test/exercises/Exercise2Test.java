@@ -43,10 +43,11 @@ public class Exercise2Test extends TestSetup{
 	@Test
 	public void fieldBasedImpreciseTest(){
 		executeStaticAnalysis(FieldNoSQLInjection.class.getName());
-		
+		System.out.println("in test 46");
 		assert containsDataFlowFactAtStmt("FIELDBASED <target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: java.lang.String userInput>","specialinvoke this.<target.exercise2and3.FieldNoSQLInjection: void createQuery(target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint)>(o2)");
+		System.out.println("in test 47");
 		assert containsDataFlowFactAtStmt("FIELDBASED <target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: java.lang.String userInput>","conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>(\"url\", \"userName\", \"password\")");
-		
+
 		//This is an imprecise propagation
 		assert containsDataFlowFactAtStmt("loaded","conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>(\"url\", \"userName\", \"password\")");
 		assert reporter.getReportedVulnerabilities() == 1;

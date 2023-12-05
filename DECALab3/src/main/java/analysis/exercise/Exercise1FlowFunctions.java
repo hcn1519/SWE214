@@ -1,6 +1,5 @@
 package analysis.exercise;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -11,8 +10,6 @@ import analysis.TaintAnalysisFlowFunctions;
 import analysis.VulnerabilityReporter;
 import analysis.fact.DataFlowFact;
 import heros.FlowFunction;
-import polyglot.ast.Assign;
-import polyglot.ext.param.types.Param;
 import soot.Local;
 import soot.SootMethod;
 import soot.Unit;
@@ -29,7 +26,6 @@ public class Exercise1FlowFunctions extends TaintAnalysisFlowFunctions {
 
 	@Override
 	public FlowFunction<DataFlowFact> getCallFlowFunction(Unit callSite, SootMethod callee) {
-
 		return new FlowFunction<DataFlowFact>() {
 			@Override
 			public Set<DataFlowFact> computeTargets(DataFlowFact fact) {
@@ -37,23 +33,20 @@ public class Exercise1FlowFunctions extends TaintAnalysisFlowFunctions {
 					return Collections.emptySet();
 				prettyPrint(callSite, fact);
 				Set<DataFlowFact> out = Sets.newHashSet();
-
-				if(!(callSite instanceof Stmt) || !callee.hasActiveBody())
-					return out;
-
-				if (fact == DataFlowFact.zero()) {
-					out.add(fact);
+				if(!(callSite instanceof Stmt)){
 					return out;
 				}
+				Stmt callSiteStmt = (Stmt) callSite;
+				//TODO: Implement Exercise 1c) here
+				if (callSiteStmt instanceof InvokeStmt && callSiteStmt.containsInvokeExpr()) {
+					InvokeStmt invokeStmt = (InvokeStmt) callSiteStmt;
+					List<Value> args = invokeStmt.getInvokeExpr().getArgs();
+					List<Local> params = callee.getActiveBody().getParameterLocals();
 
-				List<Value> callSiteArgs = ((Stmt) callSite).getInvokeExpr().getArgs();
-				List<Local> paramLocals = callee.getActiveBody().getParameterLocals();
-
-				Local factLocal = fact.getVariable();
-				for (int i = 0; i < callSiteArgs.size(); i++) {
-					Value callSiteArg = callSiteArgs.get(i);
-					if (callSiteArg.equivTo(factLocal)) {
-						out.add(dataFlowfact(paramLocals.get(i)));
+					for (int i = 0; i < invokeStmt.getInvokeExpr().getArgCount(); i++) {
+						if (fact.getVariable().equals(args.get(i))) {
+							out.add(new DataFlowFact(params.get(i)));
+						}
 					}
 				}
 				return out;
@@ -63,21 +56,23 @@ public class Exercise1FlowFunctions extends TaintAnalysisFlowFunctions {
 
 	public FlowFunction<DataFlowFact> getCallToReturnFlowFunction(final Unit call, Unit returnSite) {
 		return new FlowFunction<DataFlowFact>() {
-
 			@Override
 			public Set<DataFlowFact> computeTargets(DataFlowFact val) {
-				prettyPrint(call, val);
+
 				Set<DataFlowFact> out = Sets.newHashSet();
 				Stmt callSiteStmt = (Stmt) call;
 				out.add(val);
 				modelStringOperations(val, out, callSiteStmt);
+				
+				if(val.equals(DataFlowFact.zero())){
+					//TODO: Implement Exercise 1a) here
+					if (callSiteStmt instanceof AssignStmt){
+						Value leftOp = ((AssignStmt) callSiteStmt).getLeftOp();
+						Value rightOp = ((AssignStmt) callSiteStmt).getRightOp();
 
-				if (val.equals(DataFlowFact.zero())) {
-					if (callSiteStmt instanceof AssignStmt) {
-						AssignStmt assignStmt = (AssignStmt) callSiteStmt;
-						Value lhs = ((DefinitionStmt) callSiteStmt).getLeftOp();
-						if (assignStmt.getInvokeExpr().toString().contains("getParameter"))
-							out.add(dataFlowfact(lhs));
+						if (leftOp instanceof Local && rightOp.toString().contains("getParameter")) {
+							out.add(new DataFlowFact((Local) leftOp));
+						}
 					}
 				}
 				if(call instanceof Stmt && call.toString().contains("executeQuery")){
@@ -120,52 +115,29 @@ public class Exercise1FlowFunctions extends TaintAnalysisFlowFunctions {
 			}
 		}
 	}
-
-	private DataFlowFact dataFlowfact(Value value) {
-		if (value instanceof Local)
-			return new DataFlowFact((Local)value);
-
-		if (value instanceof InstanceFieldRef) {
-			Local local = (Local) ((InstanceFieldRef) value).getBase();
-			return new DataFlowFact(local);
-		}
-		return null;
-	}
-
 	@Override
 	public FlowFunction<DataFlowFact> getNormalFlowFunction(final Unit curr, Unit succ) {
 		return new FlowFunction<DataFlowFact>() {
 			@Override
 			public Set<DataFlowFact> computeTargets(DataFlowFact fact) {
 				prettyPrint(curr, fact);
-				if (!(curr instanceof AssignStmt))
-					return Collections.singleton(fact);
-
-				AssignStmt assignStmt = (AssignStmt) curr;
-				Value lhs = assignStmt.getLeftOp();
-				Value rhs = assignStmt.getRightOp();
-
-				// kill lhs if rhs is Constant
-				if (rhs instanceof Constant) {
-					// kill, i.e. y = 0, <fact = y>
-					if (lhs.equivTo(fact.getVariable())) {
-						return Collections.emptySet();
-					}
-					// keep, i.e. y = 0, <fact = ZERO>
-					return Collections.singleton(fact);
-				}
-
-				// keep prev fact if rhs is not related to fact
-				// i.e. stmt: x = y; <fact = this>
-				if (!rhs.equivTo(fact.getVariable())) {
-					return Collections.singleton(fact);
-				}
-
-				// gen lhs dataflow fact
 				Set<DataFlowFact> out = Sets.newHashSet();
 				out.add(fact);
-				DataFlowFact lhsDataFlowFact = dataFlowfact(lhs);
-				out.add(lhsDataFlowFact);
+				//TODO: Implement Exercise 1b) here
+				if (curr instanceof AssignStmt) {
+					Value leftOp = ((AssignStmt) curr).getLeftOp();
+					Value rightOp = ((AssignStmt) curr).getRightOp();
+
+					if (leftOp instanceof Local && rightOp instanceof Local && fact.getVariable().equals(rightOp)) {
+						out.add(new DataFlowFact((Local) leftOp));
+					}
+					if (rightOp instanceof Constant) {
+						if (fact.getVariable().equals(leftOp)) {
+							return Collections.emptySet();
+						}
+						return out;
+					}
+				}
 				return out;
 			}
 		};

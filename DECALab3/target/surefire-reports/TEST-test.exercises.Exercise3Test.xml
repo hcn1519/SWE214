@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="test.exercises.Exercise3Test" time="25.84" tests="7" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="gopherProxySet" value="false"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/changnam/Downloads/DECALab3/target/test-classes:/Users/changnam/Downloads/DECALab3/target/classes:/Users/changnam/.m2/repository/ca/mcgill/sable/soot/3.3.0/soot-3.3.0.jar:/Users/changnam/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar:/Users/changnam/.m2/repository/org/smali/dexlib2/2.2.5/dexlib2-2.2.5.jar:/Users/changnam/.m2/repository/org/ow2/asm/asm-debug-all/5.2/asm-debug-all-5.2.jar:/Users/changnam/.m2/repository/xmlpull/xmlpull/1.1.3.4d_b4_min/xmlpull-1.1.3.4d_b4_min.jar:/Users/changnam/.m2/repository/de/upb/cs/swt/axml/2.0.0/axml-2.0.0.jar:/Users/changnam/.m2/repository/ca/mcgill/sable/polyglot/2006/polyglot-2006.jar:/Users/changnam/.m2/repository/de/upb/cs/swt/heros/1.1.0/heros-1.1.0.jar:/Users/changnam/.m2/repository/org/functionaljava/functionaljava/4.2/functionaljava-4.2.jar:/Users/changnam/.m2/repository/ca/mcgill/sable/jasmin/3.0.1/jasmin-3.0.1.jar:/Users/changnam/.m2/repository/ca/mcgill/sable/java_cup/0.9.2/java_cup-0.9.2.jar:/Users/changnam/.m2/repository/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar:/Users/changnam/.m2/repository/com/beust/jcommander/1.78/jcommander-1.78.jar:/Users/changnam/.m2/repository/com/google/guava/guava/27.0.1-jre/guava-27.0.1-jre.jar:/Users/changnam/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/Users/changnam/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/changnam/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/changnam/.m2/repository/org/checkerframework/checker-qual/2.5.2/checker-qual-2.5.2.jar:/Users/changnam/.m2/repository/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.jar:/Users/changnam/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/Users/changnam/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.17/animal-sniffer-annotations-1.17.jar:/Users/changnam/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/changnam/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="java.vm.vendor" value="Temurin"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="user.country" value="KR"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib"/>
+    <property name="sun.java.command" value="/Users/changnam/Downloads/DECALab3/target/surefire/surefirebooter-20231129204826394_3.jar /Users/changnam/Downloads/DECALab3/target/surefire 2023-11-29T20-48-25_975-jvmRun1 surefire-20231129204826394_1tmp surefire_0-20231129204826394_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="surefire.test.class.path" value="/Users/changnam/Downloads/DECALab3/target/test-classes:/Users/changnam/Downloads/DECALab3/target/classes:/Users/changnam/.m2/repository/ca/mcgill/sable/soot/3.3.0/soot-3.3.0.jar:/Users/changnam/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar:/Users/changnam/.m2/repository/org/smali/dexlib2/2.2.5/dexlib2-2.2.5.jar:/Users/changnam/.m2/repository/org/ow2/asm/asm-debug-all/5.2/asm-debug-all-5.2.jar:/Users/changnam/.m2/repository/xmlpull/xmlpull/1.1.3.4d_b4_min/xmlpull-1.1.3.4d_b4_min.jar:/Users/changnam/.m2/repository/de/upb/cs/swt/axml/2.0.0/axml-2.0.0.jar:/Users/changnam/.m2/repository/ca/mcgill/sable/polyglot/2006/polyglot-2006.jar:/Users/changnam/.m2/repository/de/upb/cs/swt/heros/1.1.0/heros-1.1.0.jar:/Users/changnam/.m2/repository/org/functionaljava/functionaljava/4.2/functionaljava-4.2.jar:/Users/changnam/.m2/repository/ca/mcgill/sable/jasmin/3.0.1/jasmin-3.0.1.jar:/Users/changnam/.m2/repository/ca/mcgill/sable/java_cup/0.9.2/java_cup-0.9.2.jar:/Users/changnam/.m2/repository/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar:/Users/changnam/.m2/repository/com/beust/jcommander/1.78/jcommander-1.78.jar:/Users/changnam/.m2/repository/com/google/guava/guava/27.0.1-jre/guava-27.0.1-jre.jar:/Users/changnam/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/Users/changnam/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/changnam/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/changnam/.m2/repository/org/checkerframework/checker-qual/2.5.2/checker-qual-2.5.2.jar:/Users/changnam/.m2/repository/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.jar:/Users/changnam/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/Users/changnam/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.17/animal-sniffer-annotations-1.17.jar:/Users/changnam/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/changnam/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/changnam"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre"/>
+    <property name="basedir" value="/Users/changnam/Downloads/DECALab3"/>
+    <property name="file.separator" value="/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/Users/changnam/Downloads/DECALab3/target/surefire/surefirebooter-20231129204826394_3.jar"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/classes"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="1.8.0_372-b07"/>
+    <property name="user.name" value="changnam"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="14.1"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/changnam/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/y6/7xbldr8x0g717pc5ss3ktjbm0000gn/T/"/>
+    <property name="java.version" value="1.8.0_372"/>
+    <property name="user.dir" value="/Users/changnam/Downloads/DECALab3"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/Users/changnam/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Temurin"/>
+    <property name="java.vm.version" value="25.372-b07"/>
+    <property name="java.specification.maintenance.version" value="4"/>
+    <property name="java.ext.dirs" value="/Users/changnam/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+  </properties>
+  <testcase name="directSQLInjection" classname="test.exercises.Exercise3Test" time="4.918">
+    <system-out><![CDATA[Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: this := @this: target.exercise1.DirectSQLInjection, Fact: <ZERO>
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: request := @parameter0: target.exercise1.HttpServletRequest, Fact: <ZERO>
+Method :<target.exercise1.HttpServletRequest: java.lang.String getParameter(java.lang.String)>, Stmt: this := @this: target.exercise1.HttpServletRequest, Fact: <ZERO>
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: userId
+Method :<target.exercise1.HttpServletRequest: java.lang.String getParameter(java.lang.String)>, Stmt: string := @parameter0: java.lang.String, Fact: <ZERO>
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: userId = virtualinvoke request.<target.exercise1.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("userId"), Fact: <ZERO>
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack9 = new java.lang.StringBuilder, Fact: userId
+Method :<java.lang.Object: void <clinit>()>, Stmt: staticinvoke <java.lang.Object: void registerNatives()>(), Fact: <ZERO>
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: <ZERO>
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack9 = new java.lang.StringBuilder, Fact: <ZERO>
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack9.<java.lang.StringBuilder: void <init>()>(), Fact: userId
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack10 = virtualinvoke $stack9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: userId
+Method :<java.lang.StringBuilder: void <init>()>, Stmt: l0 := @this: java.lang.StringBuilder, Fact: <ZERO>
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack11 = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(userId), Fact: userId
+Method :<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>, Stmt: l0 := @this: java.lang.StringBuilder, Fact: <ZERO>
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack12 = virtualinvoke $stack11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: userId
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack12 = virtualinvoke $stack11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: $stack11
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack9.<java.lang.StringBuilder: void <init>()>(), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>, Stmt: l1 := @parameter0: java.lang.String, Fact: <ZERO>
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack12.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: userId
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack12.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: $stack11
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack12.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: $stack12
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack12 = virtualinvoke $stack11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: <ZERO>
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack10 = virtualinvoke $stack9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: <ZERO>
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack11 = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(userId), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: l0 := @this: java.lang.StringBuilder, Fact: <ZERO>
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: goto [?= return], Fact: userId
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: goto [?= return], Fact: $stack11
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: goto [?= return], Fact: query
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: goto [?= return], Fact: $stack12
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: $stack1 = new java.lang.String, Fact: <ZERO>
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: goto [?= return], Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: $stack3 = l0.<java.lang.StringBuilder: char[] value>, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: $stack2 = l0.<java.lang.StringBuilder: int count>, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l0 := @this: java.lang.String, Fact: <ZERO>
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack12.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l1 := @parameter0: char[], Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l2 := @parameter1: int, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l3 := @parameter2: int, Fact: <ZERO>
+Method :<java.lang.Object: void <init>()>, Stmt: l0 := @this: java.lang.Object, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 >= 0 goto (branch), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 >= 0 goto (branch), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: specialinvoke l0.<java.lang.Object: void <init>()>(), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack17 = new java.lang.StringIndexOutOfBoundsException, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 > 0 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 > 0 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 >= 0 goto $stack10 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 >= 0 goto $stack10 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack16 = new java.lang.StringIndexOutOfBoundsException, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack10 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack5 = $stack4 - l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 > $stack10 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 > $stack10 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 <= $stack5 goto $stack6 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 <= $stack5 goto $stack6 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack14 = "", Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack8 = new java.lang.StringIndexOutOfBoundsException, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack6 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack15 = $stack14.<java.lang.String: char[] value>, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack9 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack7 = staticinvoke <java.util.Arrays: char[] copyOfRange(char[],int,int)>(l1, l2, $stack6), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l0.<java.lang.String: char[] value> = $stack15, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l0.<java.lang.String: char[] value> = $stack7, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: userId
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack9.<java.lang.StringBuilder: void <init>()>(), Fact: userId
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack10 = virtualinvoke $stack9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: userId
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack11 = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(userId), Fact: userId
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack12 = virtualinvoke $stack11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: userId
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack12 = virtualinvoke $stack11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: $stack11
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack12.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: userId
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack12.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: $stack11
+Method :<target.exercise1.DirectSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack12.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: $stack12
+]]></system-out>
+    <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+]]></system-err>
+  </testcase>
+  <testcase name="assignmentSQLInjection" classname="test.exercises.Exercise3Test" time="4.836">
+    <system-out><![CDATA[Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: this := @this: target.exercise1.AssignmentSQLInjection, Fact: <ZERO>
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: request := @parameter0: target.exercise1.HttpServletRequest, Fact: <ZERO>
+Method :<target.exercise1.HttpServletRequest: java.lang.String getParameter(java.lang.String)>, Stmt: this := @this: target.exercise1.HttpServletRequest, Fact: <ZERO>
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: alias = userId, Fact: <ZERO>
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: alias = userId, Fact: userId
+Method :<target.exercise1.HttpServletRequest: java.lang.String getParameter(java.lang.String)>, Stmt: string := @parameter0: java.lang.String, Fact: <ZERO>
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: alias
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: userId
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: userId = virtualinvoke request.<target.exercise1.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("userId"), Fact: <ZERO>
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: <ZERO>
+Method :<java.lang.Object: void <clinit>()>, Stmt: staticinvoke <java.lang.Object: void registerNatives()>(), Fact: <ZERO>
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack10 = new java.lang.StringBuilder, Fact: <ZERO>
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack10 = new java.lang.StringBuilder, Fact: alias
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack10 = new java.lang.StringBuilder, Fact: userId
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack10.<java.lang.StringBuilder: void <init>()>(), Fact: alias
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack10.<java.lang.StringBuilder: void <init>()>(), Fact: userId
+Method :<java.lang.StringBuilder: void <init>()>, Stmt: l0 := @this: java.lang.StringBuilder, Fact: <ZERO>
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack11 = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: alias
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack11 = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: userId
+Method :<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>, Stmt: l0 := @this: java.lang.StringBuilder, Fact: <ZERO>
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack12 = virtualinvoke $stack11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(alias), Fact: alias
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack12 = virtualinvoke $stack11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(alias), Fact: userId
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack10.<java.lang.StringBuilder: void <init>()>(), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>, Stmt: l1 := @parameter0: java.lang.String, Fact: <ZERO>
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack13 = virtualinvoke $stack12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: alias
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack13 = virtualinvoke $stack12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: $stack12
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack13 = virtualinvoke $stack12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: userId
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack13.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: alias
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack13.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: $stack13
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack13.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: $stack12
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack13.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: userId
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack11 = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: <ZERO>
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack12 = virtualinvoke $stack11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(alias), Fact: <ZERO>
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack13 = virtualinvoke $stack12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: l0 := @this: java.lang.StringBuilder, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: $stack1 = new java.lang.String, Fact: <ZERO>
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: goto [?= return], Fact: <ZERO>
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: goto [?= return], Fact: alias
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: goto [?= return], Fact: query
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: goto [?= return], Fact: $stack13
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: goto [?= return], Fact: $stack12
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: goto [?= return], Fact: userId
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: $stack3 = l0.<java.lang.StringBuilder: char[] value>, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: $stack2 = l0.<java.lang.StringBuilder: int count>, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l0 := @this: java.lang.String, Fact: <ZERO>
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack13.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l1 := @parameter0: char[], Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l2 := @parameter1: int, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l3 := @parameter2: int, Fact: <ZERO>
+Method :<java.lang.Object: void <init>()>, Stmt: l0 := @this: java.lang.Object, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 >= 0 goto (branch), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 >= 0 goto (branch), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: specialinvoke l0.<java.lang.Object: void <init>()>(), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack17 = new java.lang.StringIndexOutOfBoundsException, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 > 0 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 > 0 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 >= 0 goto $stack10 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 >= 0 goto $stack10 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack16 = new java.lang.StringIndexOutOfBoundsException, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack10 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack5 = $stack4 - l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 > $stack10 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 > $stack10 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 <= $stack5 goto $stack6 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 <= $stack5 goto $stack6 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack14 = "", Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack8 = new java.lang.StringIndexOutOfBoundsException, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack6 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack15 = $stack14.<java.lang.String: char[] value>, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack9 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack7 = staticinvoke <java.util.Arrays: char[] copyOfRange(char[],int,int)>(l1, l2, $stack6), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l0.<java.lang.String: char[] value> = $stack15, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l0.<java.lang.String: char[] value> = $stack7, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: alias
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: userId
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack10.<java.lang.StringBuilder: void <init>()>(), Fact: alias
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack10.<java.lang.StringBuilder: void <init>()>(), Fact: userId
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack11 = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: alias
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack11 = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: userId
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack12 = virtualinvoke $stack11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(alias), Fact: alias
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack12 = virtualinvoke $stack11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(alias), Fact: userId
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack13 = virtualinvoke $stack12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: alias
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack13 = virtualinvoke $stack12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: $stack12
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack13 = virtualinvoke $stack12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: userId
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack13.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: alias
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack13.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: $stack13
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack13.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: $stack12
+Method :<target.exercise1.AssignmentSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack13.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: userId
+]]></system-out>
+  </testcase>
+  <testcase name="noSQLInjection" classname="test.exercises.Exercise3Test" time="3.838">
+    <system-out><![CDATA[Method :<target.exercise1.NoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: this := @this: target.exercise1.NoSQLInjection, Fact: <ZERO>
+Method :<target.exercise1.NoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: request := @parameter0: target.exercise1.HttpServletRequest, Fact: <ZERO>
+Method :<target.exercise1.HttpServletRequest: java.lang.String getParameter(java.lang.String)>, Stmt: this := @this: target.exercise1.HttpServletRequest, Fact: <ZERO>
+Method :<target.exercise1.NoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: userId
+Method :<target.exercise1.HttpServletRequest: java.lang.String getParameter(java.lang.String)>, Stmt: string := @parameter0: java.lang.String, Fact: <ZERO>
+Method :<target.exercise1.NoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: userId = virtualinvoke request.<target.exercise1.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("userId"), Fact: <ZERO>
+Method :<target.exercise1.NoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: <ZERO>
+Method :<java.lang.Object: void <clinit>()>, Stmt: staticinvoke <java.lang.Object: void registerNatives()>(), Fact: <ZERO>
+Method :<target.exercise1.NoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: goto [?= return], Fact: userId
+Method :<target.exercise1.NoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: goto [?= return], Fact: <ZERO>
+Method :<target.exercise1.NoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: userId
+]]></system-out>
+  </testcase>
+  <testcase name="interproceduralSQLInjection" classname="test.exercises.Exercise3Test" time="3.093">
+    <system-out><![CDATA[Method :<target.exercise1.InterproceduralSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: this := @this: target.exercise1.InterproceduralSQLInjection, Fact: <ZERO>
+Method :<target.exercise1.InterproceduralSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: request := @parameter0: target.exercise1.HttpServletRequest, Fact: <ZERO>
+Method :<target.exercise1.HttpServletRequest: java.lang.String getParameter(java.lang.String)>, Stmt: this := @this: target.exercise1.HttpServletRequest, Fact: <ZERO>
+Method :<target.exercise1.InterproceduralSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke this.<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>(userId), Fact: userId
+Method :<target.exercise1.HttpServletRequest: java.lang.String getParameter(java.lang.String)>, Stmt: string := @parameter0: java.lang.String, Fact: <ZERO>
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: this := @this: target.exercise1.InterproceduralSQLInjection, Fact: parameter
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: $stack13 := @caughtexception, Fact: parameter
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: this := @this: target.exercise1.InterproceduralSQLInjection, Fact: <ZERO>
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: $stack13 := @caughtexception, Fact: <ZERO>
+Method :<target.exercise1.InterproceduralSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: userId = virtualinvoke request.<target.exercise1.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("userId"), Fact: <ZERO>
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: parameter := @parameter0: java.lang.String, Fact: parameter
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: conn#2 = $stack13, Fact: parameter
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: parameter := @parameter0: java.lang.String, Fact: <ZERO>
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: conn#2 = $stack13, Fact: <ZERO>
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: parameter
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: $stack14 = <java.lang.System: java.io.PrintStream out>, Fact: parameter
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: $stack14 = <java.lang.System: java.io.PrintStream out>, Fact: <ZERO>
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: $stack7 = new java.lang.StringBuilder, Fact: parameter
+Method :<target.exercise1.InterproceduralSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke this.<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>(userId), Fact: parameter
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: <ZERO>
+Method :<java.lang.Object: void <clinit>()>, Stmt: staticinvoke <java.lang.Object: void registerNatives()>(), Fact: <ZERO>
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: $stack7 = new java.lang.StringBuilder, Fact: <ZERO>
+Method :<target.exercise1.InterproceduralSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke this.<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>(userId), Fact: <ZERO>
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: specialinvoke $stack7.<java.lang.StringBuilder: void <init>()>(), Fact: parameter
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: $stack8 = virtualinvoke $stack7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: parameter
+Method :<java.lang.StringBuilder: void <init>()>, Stmt: l0 := @this: java.lang.StringBuilder, Fact: <ZERO>
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: $stack9 = virtualinvoke $stack8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(parameter), Fact: parameter
+Method :<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>, Stmt: l0 := @this: java.lang.StringBuilder, Fact: <ZERO>
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: $stack10 = virtualinvoke $stack9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: parameter
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: $stack10 = virtualinvoke $stack9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: $stack9
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: specialinvoke $stack7.<java.lang.StringBuilder: void <init>()>(), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>, Stmt: l1 := @parameter0: java.lang.String, Fact: <ZERO>
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: query = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: parameter
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: query = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: $stack9
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: query = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: $stack10
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: $stack9 = virtualinvoke $stack8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(parameter), Fact: <ZERO>
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: $stack8 = virtualinvoke $stack7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: <ZERO>
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: $stack10 = virtualinvoke $stack9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: l0 := @this: java.lang.StringBuilder, Fact: <ZERO>
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: goto [?= return], Fact: parameter
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: goto [?= return], Fact: $stack9
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: goto [?= return], Fact: query
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: goto [?= return], Fact: $stack10
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: $stack1 = new java.lang.String, Fact: <ZERO>
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: goto [?= return], Fact: <ZERO>
+Method :<target.exercise1.InterproceduralSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke this.<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>(userId), Fact: $stack9
+Method :<target.exercise1.InterproceduralSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke this.<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>(userId), Fact: query
+Method :<target.exercise1.InterproceduralSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke this.<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>(userId), Fact: $stack10
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: $stack3 = l0.<java.lang.StringBuilder: char[] value>, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: $stack2 = l0.<java.lang.StringBuilder: int count>, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l0 := @this: java.lang.String, Fact: <ZERO>
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: query = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l1 := @parameter0: char[], Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l2 := @parameter1: int, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l3 := @parameter2: int, Fact: <ZERO>
+Method :<java.lang.Object: void <init>()>, Stmt: l0 := @this: java.lang.Object, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 >= 0 goto (branch), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 >= 0 goto (branch), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: specialinvoke l0.<java.lang.Object: void <init>()>(), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack17 = new java.lang.StringIndexOutOfBoundsException, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 > 0 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 > 0 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 >= 0 goto $stack10 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 >= 0 goto $stack10 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack16 = new java.lang.StringIndexOutOfBoundsException, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack10 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack5 = $stack4 - l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 > $stack10 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 > $stack10 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 <= $stack5 goto $stack6 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 <= $stack5 goto $stack6 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack14 = "", Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack8 = new java.lang.StringIndexOutOfBoundsException, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack6 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack15 = $stack14.<java.lang.String: char[] value>, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack9 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack7 = staticinvoke <java.util.Arrays: char[] copyOfRange(char[],int,int)>(l1, l2, $stack6), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l0.<java.lang.String: char[] value> = $stack15, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l0.<java.lang.String: char[] value> = $stack7, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<target.exercise1.InterproceduralSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke this.<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>(userId), Fact: userId
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: parameter
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: specialinvoke $stack7.<java.lang.StringBuilder: void <init>()>(), Fact: parameter
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: $stack8 = virtualinvoke $stack7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: parameter
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: $stack9 = virtualinvoke $stack8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(parameter), Fact: parameter
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: $stack10 = virtualinvoke $stack9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: parameter
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: $stack10 = virtualinvoke $stack9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: $stack9
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: query = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: parameter
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: query = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: $stack9
+Method :<target.exercise1.InterproceduralSQLInjection: void createQuery(java.lang.String)>, Stmt: query = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: $stack10
+]]></system-out>
+  </testcase>
+  <testcase name="fieldBasedImpreciseTest" classname="test.exercises.Exercise3Test" time="2.918">
+    <system-out><![CDATA[Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: this := @this: target.exercise2and3.FieldNoSQLInjection, Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: request := @parameter0: target.exercise1.HttpServletRequest, Fact: <ZERO>
+Method :<target.exercise1.HttpServletRequest: java.lang.String getParameter(java.lang.String)>, Stmt: this := @this: target.exercise1.HttpServletRequest, Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack6 = new target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint, Fact: userId
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack6 = new target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint, Fact: <ZERO>
+Method :<target.exercise1.HttpServletRequest: java.lang.String getParameter(java.lang.String)>, Stmt: string := @parameter0: java.lang.String, Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack6.<target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: void <init>(target.exercise2and3.FieldNoSQLInjection$1)>(null), Fact: userId
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: userId = virtualinvoke request.<target.exercise1.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("userId"), Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: o = $stack6, Fact: userId
+Method :<target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: void <init>(target.exercise2and3.FieldNoSQLInjection$1)>, Stmt: this := @this: target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint, Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: o = $stack6, Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: o.<target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: java.lang.String userInput> = userId, Fact: userId
+Method :<target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: void <init>(target.exercise2and3.FieldNoSQLInjection$1)>, Stmt: x0 := @parameter0: target.exercise2and3.FieldNoSQLInjection$1, Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: o.<target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: java.lang.String userInput> = userId, Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack7 = new target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint, Fact: userId
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack7 = new target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint, Fact: o <target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack7 = new target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint, Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack7.<target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: void <init>(target.exercise2and3.FieldNoSQLInjection$1)>(null), Fact: userId
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack7.<target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: void <init>(target.exercise2and3.FieldNoSQLInjection$1)>(null), Fact: o <target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: void <init>()>, Stmt: this := @this: target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint, Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack6.<target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: void <init>(target.exercise2and3.FieldNoSQLInjection$1)>(null), Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack7.<target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: void <init>(target.exercise2and3.FieldNoSQLInjection$1)>(null), Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: o2 = $stack7, Fact: userId
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: o2 = $stack7, Fact: o <target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: o2 = $stack7, Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke this.<target.exercise2and3.FieldNoSQLInjection: void createQuery(target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint)>(o2), Fact: userId
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke this.<target.exercise2and3.FieldNoSQLInjection: void createQuery(target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint)>(o2), Fact: o <target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: java.lang.String userInput>
+Method :<java.lang.Object: void <init>()>, Stmt: l0 := @this: java.lang.Object, Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: void <init>()>, Stmt: this.<target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: java.lang.String userInput> = "noUserInput", Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: void <init>()>, Stmt: specialinvoke this.<java.lang.Object: void <init>()>(), Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: void <init>(target.exercise2and3.FieldNoSQLInjection$1)>, Stmt: specialinvoke this.<target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: void <init>()>(), Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void createQuery(target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint)>, Stmt: this := @this: target.exercise2and3.FieldNoSQLInjection, Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void createQuery(target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint)>, Stmt: $stack14 := @caughtexception, Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void createQuery(target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint)>, Stmt: parameter := @parameter0: target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint, Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void createQuery(target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint)>, Stmt: conn#2 = $stack14, Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void createQuery(target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint)>, Stmt: loaded = parameter.<target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: java.lang.String userInput>, Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void createQuery(target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint)>, Stmt: $stack15 = <java.lang.System: java.io.PrintStream out>, Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke this.<target.exercise2and3.FieldNoSQLInjection: void createQuery(target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint)>(o2), Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void createQuery(target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: <ZERO>
+Method :<java.lang.Object: void <clinit>()>, Stmt: staticinvoke <java.lang.Object: void registerNatives()>(), Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void createQuery(target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint)>, Stmt: $stack8 = new java.lang.StringBuilder, Fact: <ZERO>
+Method :<java.lang.StringBuilder: void <init>()>, Stmt: l0 := @this: java.lang.StringBuilder, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>, Stmt: l0 := @this: java.lang.StringBuilder, Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void createQuery(target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint)>, Stmt: specialinvoke $stack8.<java.lang.StringBuilder: void <init>()>(), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>, Stmt: l1 := @parameter0: java.lang.String, Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void createQuery(target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint)>, Stmt: $stack9 = virtualinvoke $stack8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void createQuery(target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint)>, Stmt: $stack10 = virtualinvoke $stack9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(loaded), Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void createQuery(target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint)>, Stmt: $stack11 = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: l0 := @this: java.lang.StringBuilder, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: $stack1 = new java.lang.String, Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void createQuery(target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint)>, Stmt: goto [?= return], Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: $stack3 = l0.<java.lang.StringBuilder: char[] value>, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: $stack2 = l0.<java.lang.StringBuilder: int count>, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l0 := @this: java.lang.String, Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void createQuery(target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint)>, Stmt: query = virtualinvoke $stack11.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l1 := @parameter0: char[], Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l2 := @parameter1: int, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l3 := @parameter2: int, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: specialinvoke l0.<java.lang.Object: void <init>()>(), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 >= 0 goto (branch), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 >= 0 goto (branch), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack17 = new java.lang.StringIndexOutOfBoundsException, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 > 0 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 > 0 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 >= 0 goto $stack10 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 >= 0 goto $stack10 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack16 = new java.lang.StringIndexOutOfBoundsException, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack10 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack5 = $stack4 - l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 > $stack10 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 > $stack10 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 <= $stack5 goto $stack6 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 <= $stack5 goto $stack6 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack14 = "", Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack8 = new java.lang.StringIndexOutOfBoundsException, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack6 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack15 = $stack14.<java.lang.String: char[] value>, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack9 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack7 = staticinvoke <java.util.Arrays: char[] copyOfRange(char[],int,int)>(l1, l2, $stack6), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l0.<java.lang.String: char[] value> = $stack15, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l0.<java.lang.String: char[] value> = $stack7, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack6.<target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: void <init>(target.exercise2and3.FieldNoSQLInjection$1)>(null), Fact: userId
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack7.<target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: void <init>(target.exercise2and3.FieldNoSQLInjection$1)>(null), Fact: userId
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack7.<target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: void <init>(target.exercise2and3.FieldNoSQLInjection$1)>(null), Fact: o <target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke this.<target.exercise2and3.FieldNoSQLInjection: void createQuery(target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint)>(o2), Fact: userId
+Method :<target.exercise2and3.FieldNoSQLInjection: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke this.<target.exercise2and3.FieldNoSQLInjection: void createQuery(target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint)>(o2), Fact: o <target.exercise2and3.FieldNoSQLInjection$ObjectWithTaint: java.lang.String userInput>
+]]></system-out>
+  </testcase>
+  <testcase name="fieldSQLInjection1" classname="test.exercises.Exercise3Test" time="3.103">
+    <system-out><![CDATA[Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: this := @this: target.exercise2and3.FieldSQLInjection1, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: request := @parameter0: target.exercise1.HttpServletRequest, Fact: <ZERO>
+Method :<target.exercise1.HttpServletRequest: java.lang.String getParameter(java.lang.String)>, Stmt: this := @this: target.exercise1.HttpServletRequest, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack9 = new target.exercise2and3.FieldSQLInjection1$ObjectWithTaint, Fact: userId
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack9 = new target.exercise2and3.FieldSQLInjection1$ObjectWithTaint, Fact: <ZERO>
+Method :<target.exercise1.HttpServletRequest: java.lang.String getParameter(java.lang.String)>, Stmt: string := @parameter0: java.lang.String, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack9.<target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: void <init>(target.exercise2and3.FieldSQLInjection1$1)>(null), Fact: userId
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: userId = virtualinvoke request.<target.exercise1.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("userId"), Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: o = $stack9, Fact: userId
+Method :<target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: void <init>(target.exercise2and3.FieldSQLInjection1$1)>, Stmt: this := @this: target.exercise2and3.FieldSQLInjection1$ObjectWithTaint, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: o = $stack9, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: o.<target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: java.lang.String userInput> = userId, Fact: userId
+Method :<target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: void <init>(target.exercise2and3.FieldSQLInjection1$1)>, Stmt: x0 := @parameter0: target.exercise2and3.FieldSQLInjection1$1, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: o.<target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: java.lang.String userInput> = userId, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: loaded = o.<target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: java.lang.String userInput>, Fact: o <target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: loaded = o.<target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: java.lang.String userInput>, Fact: userId
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: loaded = o.<target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: java.lang.String userInput>, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: o <target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: userId
+Method :<target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: void <init>()>, Stmt: this := @this: target.exercise2and3.FieldSQLInjection1$ObjectWithTaint, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack9.<target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: void <init>(target.exercise2and3.FieldSQLInjection1$1)>(null), Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack12 = new java.lang.StringBuilder, Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack12 = new java.lang.StringBuilder, Fact: o <target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack12 = new java.lang.StringBuilder, Fact: userId
+Method :<java.lang.Object: void <init>()>, Stmt: l0 := @this: java.lang.Object, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: void <init>()>, Stmt: this.<target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: java.lang.String userInput> = "noUserInput", Fact: <ZERO>
+Method :<java.lang.Object: void <clinit>()>, Stmt: staticinvoke <java.lang.Object: void registerNatives()>(), Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack12 = new java.lang.StringBuilder, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack12.<java.lang.StringBuilder: void <init>()>(), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack12.<java.lang.StringBuilder: void <init>()>(), Fact: o <target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack12.<java.lang.StringBuilder: void <init>()>(), Fact: userId
+Method :<target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: void <init>()>, Stmt: specialinvoke this.<java.lang.Object: void <init>()>(), Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: void <init>(target.exercise2and3.FieldSQLInjection1$1)>, Stmt: specialinvoke this.<target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: void <init>()>(), Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack13 = virtualinvoke $stack12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack13 = virtualinvoke $stack12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: o <target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack13 = virtualinvoke $stack12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: userId
+Method :<java.lang.StringBuilder: void <init>()>, Stmt: l0 := @this: java.lang.StringBuilder, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack14 = virtualinvoke $stack13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(loaded), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack14 = virtualinvoke $stack13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(loaded), Fact: o <target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack14 = virtualinvoke $stack13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(loaded), Fact: userId
+Method :<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>, Stmt: l0 := @this: java.lang.StringBuilder, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack15 = virtualinvoke $stack14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack15 = virtualinvoke $stack14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: $stack14
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack15 = virtualinvoke $stack14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: o <target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack15 = virtualinvoke $stack14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: userId
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack12.<java.lang.StringBuilder: void <init>()>(), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>, Stmt: l1 := @parameter0: java.lang.String, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack15.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack15.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: $stack15
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack15.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: $stack14
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack15.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: o <target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack15.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: userId
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack14 = virtualinvoke $stack13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(loaded), Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack15 = virtualinvoke $stack14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack13 = virtualinvoke $stack12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: l0 := @this: java.lang.StringBuilder, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: goto [?= return], Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: goto [?= return], Fact: $stack15
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: goto [?= return], Fact: query
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: goto [?= return], Fact: $stack14
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: goto [?= return], Fact: o <target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: goto [?= return], Fact: userId
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: $stack1 = new java.lang.String, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: goto [?= return], Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: $stack3 = l0.<java.lang.StringBuilder: char[] value>, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: $stack2 = l0.<java.lang.StringBuilder: int count>, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l0 := @this: java.lang.String, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack15.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l1 := @parameter0: char[], Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l2 := @parameter1: int, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l3 := @parameter2: int, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: specialinvoke l0.<java.lang.Object: void <init>()>(), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 >= 0 goto (branch), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 >= 0 goto (branch), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack17 = new java.lang.StringIndexOutOfBoundsException, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 > 0 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 > 0 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 >= 0 goto $stack10 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 >= 0 goto $stack10 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack16 = new java.lang.StringIndexOutOfBoundsException, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack10 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack5 = $stack4 - l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 > $stack10 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 > $stack10 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 <= $stack5 goto $stack6 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 <= $stack5 goto $stack6 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack14 = "", Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack8 = new java.lang.StringIndexOutOfBoundsException, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack6 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack15 = $stack14.<java.lang.String: char[] value>, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack9 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack7 = staticinvoke <java.util.Arrays: char[] copyOfRange(char[],int,int)>(l1, l2, $stack6), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l0.<java.lang.String: char[] value> = $stack15, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l0.<java.lang.String: char[] value> = $stack7, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack9.<target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: void <init>(target.exercise2and3.FieldSQLInjection1$1)>(null), Fact: userId
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: o <target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: userId
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack12.<java.lang.StringBuilder: void <init>()>(), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack12.<java.lang.StringBuilder: void <init>()>(), Fact: o <target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack12.<java.lang.StringBuilder: void <init>()>(), Fact: userId
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack13 = virtualinvoke $stack12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack13 = virtualinvoke $stack12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: o <target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack13 = virtualinvoke $stack12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: userId
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack14 = virtualinvoke $stack13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(loaded), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack14 = virtualinvoke $stack13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(loaded), Fact: o <target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack14 = virtualinvoke $stack13.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(loaded), Fact: userId
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack15 = virtualinvoke $stack14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack15 = virtualinvoke $stack14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: $stack14
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack15 = virtualinvoke $stack14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: o <target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack15 = virtualinvoke $stack14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: userId
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack15.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack15.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: $stack15
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack15.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: $stack14
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack15.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: o <target.exercise2and3.FieldSQLInjection1$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection1: void doGet(target.exercise1.HttpServletRequest)>, Stmt: query = virtualinvoke $stack15.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: userId
+]]></system-out>
+  </testcase>
+  <testcase name="fieldSQLInjection2" classname="test.exercises.Exercise3Test" time="2.997">
+    <system-out><![CDATA[Method :<target.exercise2and3.FieldSQLInjection2: void doGet(target.exercise1.HttpServletRequest)>, Stmt: this := @this: target.exercise2and3.FieldSQLInjection2, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void doGet(target.exercise1.HttpServletRequest)>, Stmt: request := @parameter0: target.exercise1.HttpServletRequest, Fact: <ZERO>
+Method :<target.exercise1.HttpServletRequest: java.lang.String getParameter(java.lang.String)>, Stmt: this := @this: target.exercise1.HttpServletRequest, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack5 = new target.exercise2and3.FieldSQLInjection2$ObjectWithTaint, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void doGet(target.exercise1.HttpServletRequest)>, Stmt: $stack5 = new target.exercise2and3.FieldSQLInjection2$ObjectWithTaint, Fact: userId
+Method :<target.exercise1.HttpServletRequest: java.lang.String getParameter(java.lang.String)>, Stmt: string := @parameter0: java.lang.String, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack5.<target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: void <init>(target.exercise2and3.FieldSQLInjection2$1)>(null), Fact: userId
+Method :<target.exercise2and3.FieldSQLInjection2: void doGet(target.exercise1.HttpServletRequest)>, Stmt: userId = virtualinvoke request.<target.exercise1.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("userId"), Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: void <init>(target.exercise2and3.FieldSQLInjection2$1)>, Stmt: this := @this: target.exercise2and3.FieldSQLInjection2$ObjectWithTaint, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void doGet(target.exercise1.HttpServletRequest)>, Stmt: o = $stack5, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void doGet(target.exercise1.HttpServletRequest)>, Stmt: o = $stack5, Fact: userId
+Method :<target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: void <init>(target.exercise2and3.FieldSQLInjection2$1)>, Stmt: x0 := @parameter0: target.exercise2and3.FieldSQLInjection2$1, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void doGet(target.exercise1.HttpServletRequest)>, Stmt: o.<target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput> = userId, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void doGet(target.exercise1.HttpServletRequest)>, Stmt: o.<target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput> = userId, Fact: userId
+Method :<target.exercise2and3.FieldSQLInjection2: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke this.<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>(o), Fact: o <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection2: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke this.<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>(o), Fact: userId
+Method :<target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: void <init>()>, Stmt: this := @this: target.exercise2and3.FieldSQLInjection2$ObjectWithTaint, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack5.<target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: void <init>(target.exercise2and3.FieldSQLInjection2$1)>(null), Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: this := @this: target.exercise2and3.FieldSQLInjection2, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack14 := @caughtexception, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: this := @this: target.exercise2and3.FieldSQLInjection2, Fact: parameter <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack14 := @caughtexception, Fact: parameter <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: parameter := @parameter0: target.exercise2and3.FieldSQLInjection2$ObjectWithTaint, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: conn#2 = $stack14, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: parameter := @parameter0: target.exercise2and3.FieldSQLInjection2$ObjectWithTaint, Fact: parameter <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: conn#2 = $stack14, Fact: parameter <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+Method :<java.lang.Object: void <init>()>, Stmt: l0 := @this: java.lang.Object, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: void <init>()>, Stmt: this.<target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput> = "noUserInput", Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: loaded = parameter.<target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack15 = <java.lang.System: java.io.PrintStream out>, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: loaded = parameter.<target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>, Fact: parameter <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack15 = <java.lang.System: java.io.PrintStream out>, Fact: parameter <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: void <init>()>, Stmt: specialinvoke this.<java.lang.Object: void <init>()>(), Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: void <init>(target.exercise2and3.FieldSQLInjection2$1)>, Stmt: specialinvoke this.<target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: void <init>()>(), Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: parameter <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection2: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke this.<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>(o), Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke this.<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>(o), Fact: parameter <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: <ZERO>
+Method :<java.lang.Object: void <clinit>()>, Stmt: staticinvoke <java.lang.Object: void registerNatives()>(), Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack8 = new java.lang.StringBuilder, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack8 = new java.lang.StringBuilder, Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack8 = new java.lang.StringBuilder, Fact: parameter <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: specialinvoke $stack8.<java.lang.StringBuilder: void <init>()>(), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: specialinvoke $stack8.<java.lang.StringBuilder: void <init>()>(), Fact: parameter <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+Method :<java.lang.StringBuilder: void <init>()>, Stmt: l0 := @this: java.lang.StringBuilder, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack9 = virtualinvoke $stack8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack9 = virtualinvoke $stack8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: parameter <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+Method :<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>, Stmt: l0 := @this: java.lang.StringBuilder, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack10 = virtualinvoke $stack9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(loaded), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack10 = virtualinvoke $stack9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(loaded), Fact: parameter <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: specialinvoke $stack8.<java.lang.StringBuilder: void <init>()>(), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>, Stmt: l1 := @parameter0: java.lang.String, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack11 = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack11 = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: $stack10
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack11 = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: parameter <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: query = virtualinvoke $stack11.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: query = virtualinvoke $stack11.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: $stack11
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: query = virtualinvoke $stack11.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: $stack10
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: query = virtualinvoke $stack11.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: parameter <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack11 = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack10 = virtualinvoke $stack9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(loaded), Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack9 = virtualinvoke $stack8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: l0 := @this: java.lang.StringBuilder, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: $stack1 = new java.lang.String, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: goto [?= return], Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: goto [?= return], Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: goto [?= return], Fact: $stack11
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: goto [?= return], Fact: query
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: goto [?= return], Fact: $stack10
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: goto [?= return], Fact: parameter <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: $stack3 = l0.<java.lang.StringBuilder: char[] value>, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke this.<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>(o), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection2: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke this.<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>(o), Fact: $stack11
+Method :<target.exercise2and3.FieldSQLInjection2: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke this.<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>(o), Fact: query
+Method :<target.exercise2and3.FieldSQLInjection2: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke this.<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>(o), Fact: $stack10
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: $stack2 = l0.<java.lang.StringBuilder: int count>, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l0 := @this: java.lang.String, Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: query = virtualinvoke $stack11.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l1 := @parameter0: char[], Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l2 := @parameter1: int, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l3 := @parameter2: int, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: specialinvoke l0.<java.lang.Object: void <init>()>(), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 >= 0 goto (branch), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 >= 0 goto (branch), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack17 = new java.lang.StringIndexOutOfBoundsException, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 > 0 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 > 0 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 >= 0 goto $stack10 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l3 >= 0 goto $stack10 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack16 = new java.lang.StringIndexOutOfBoundsException, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack10 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack5 = $stack4 - l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 > $stack10 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 > $stack10 goto $stack4 = lengthof l1, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 <= $stack5 goto $stack6 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: if l2 <= $stack5 goto $stack6 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack14 = "", Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack8 = new java.lang.StringIndexOutOfBoundsException, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack6 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack15 = $stack14.<java.lang.String: char[] value>, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack9 = l2 + l3, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: $stack7 = staticinvoke <java.util.Arrays: char[] copyOfRange(char[],int,int)>(l1, l2, $stack6), Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l0.<java.lang.String: char[] value> = $stack15, Fact: <ZERO>
+Method :<java.lang.String: void <init>(char[],int,int)>, Stmt: l0.<java.lang.String: char[] value> = $stack7, Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<java.lang.StringBuilder: java.lang.String toString()>, Stmt: specialinvoke $stack1.<java.lang.String: void <init>(char[],int,int)>($stack3, 0, $stack2), Fact: <ZERO>
+Method :<target.exercise2and3.FieldSQLInjection2: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke $stack5.<target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: void <init>(target.exercise2and3.FieldSQLInjection2$1)>(null), Fact: userId
+Method :<target.exercise2and3.FieldSQLInjection2: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke this.<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>(o), Fact: o <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection2: void doGet(target.exercise1.HttpServletRequest)>, Stmt: specialinvoke this.<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>(o), Fact: userId
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: conn = staticinvoke <java.sql.DriverManager: java.sql.Connection getConnection(java.lang.String,java.lang.String,java.lang.String)>("url", "userName", "password"), Fact: parameter <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: specialinvoke $stack8.<java.lang.StringBuilder: void <init>()>(), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: specialinvoke $stack8.<java.lang.StringBuilder: void <init>()>(), Fact: parameter <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack9 = virtualinvoke $stack8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack9 = virtualinvoke $stack8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("SELECT * FROM  User where userId=\'"), Fact: parameter <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack10 = virtualinvoke $stack9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(loaded), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack10 = virtualinvoke $stack9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(loaded), Fact: parameter <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack11 = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack11 = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: $stack10
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: $stack11 = virtualinvoke $stack10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'"), Fact: parameter <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: query = virtualinvoke $stack11.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: loaded
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: query = virtualinvoke $stack11.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: $stack11
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: query = virtualinvoke $stack11.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: $stack10
+Method :<target.exercise2and3.FieldSQLInjection2: void createQuery(target.exercise2and3.FieldSQLInjection2$ObjectWithTaint)>, Stmt: query = virtualinvoke $stack11.<java.lang.StringBuilder: java.lang.String toString()>(), Fact: parameter <target.exercise2and3.FieldSQLInjection2$ObjectWithTaint: java.lang.String userInput>
+]]></system-out>
+  </testcase>
+</testsuite>

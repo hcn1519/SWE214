@@ -1,6 +1,7 @@
 package analysis.exercise;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 
 import com.google.common.collect.Sets;
@@ -14,10 +15,8 @@ import soot.SootField;
 import soot.SootMethod;
 import soot.Unit;
 import soot.Value;
-import soot.jimple.AssignStmt;
-import soot.jimple.InstanceFieldRef;
-import soot.jimple.InstanceInvokeExpr;
-import soot.jimple.Stmt;
+import soot.jimple.*;
+import soot.jimple.internal.JInstanceFieldRef;
 
 public class Exercise3FlowFunctions extends TaintAnalysisFlowFunctions {
 
@@ -40,13 +39,23 @@ public class Exercise3FlowFunctions extends TaintAnalysisFlowFunctions {
 					return out;
 				}
 				Stmt callSiteStmt = (Stmt) callSite;
-				
-				//TODO: Implement Exercise 1c) here				
-				//TODO: Implement interprocedural part of Exercise 3 here.
+				//TODO: Implement Exercise 1c) here
+				if (callSiteStmt instanceof InvokeStmt && callSiteStmt.containsInvokeExpr()) {
+					InvokeStmt invokeStmt = (InvokeStmt) callSiteStmt;
+					List<Value> args = invokeStmt.getInvokeExpr().getArgs();
+					List<Local> params = callee.getActiveBody().getParameterLocals();
+					//TODO: Implement interprocedural part of Exercise 3 here
+					for (int i = 0; i < invokeStmt.getInvokeExpr().getArgCount(); i++) {
+						Value argument = args.get(i);
+						if (fact.getVariable() != null && fact.getVariable() == argument) {
+							out.add(new DataFlowFact(params.get(i), fact.getField()));
+						}
+//						fact.getField().getType().equals(invokeStmt.getInvokeExpr().getArg(0).getType())
+					}
+				}
 				return out;
 			}
 
-			
 		};
 	}
 
@@ -62,7 +71,15 @@ public class Exercise3FlowFunctions extends TaintAnalysisFlowFunctions {
 				modelStringOperations(val, out, callSiteStmt);
 				
 				if(val.equals(DataFlowFact.zero())){
-					//TODO: Implement Exercise 1a) here				
+					//TODO: Implement Exercise 1a) here
+					if (callSiteStmt instanceof AssignStmt) {
+						Value leftOp = ((AssignStmt) callSiteStmt).getLeftOp();
+						Value rightOp = ((AssignStmt) callSiteStmt).getRightOp();
+
+						if (leftOp instanceof Local && rightOp.toString().contains("java.lang.String getParameter(java.lang.String)")) {
+							out.add(new DataFlowFact((Local) leftOp));
+						}
+					}
 				}
 				if(call instanceof Stmt && call.toString().contains("executeQuery")){
 					Stmt stmt = (Stmt) call;
@@ -104,6 +121,15 @@ public class Exercise3FlowFunctions extends TaintAnalysisFlowFunctions {
 			}
 		}
 	}
+	private DataFlowFact fieldSensitiveDataFlowFact(Value value) {
+		if (value instanceof Local)
+			return new DataFlowFact((Local) value);
+		if (value instanceof JInstanceFieldRef) {
+			JInstanceFieldRef fieldRef = ((JInstanceFieldRef) value);
+			return new DataFlowFact((Local) fieldRef.getBase(), fieldRef.getField());
+		}
+		return null;
+	}
 	@Override
 	public FlowFunction<DataFlowFact> getNormalFlowFunction(final Unit curr, Unit succ) {
 		return new FlowFunction<DataFlowFact>() {
@@ -112,9 +138,41 @@ public class Exercise3FlowFunctions extends TaintAnalysisFlowFunctions {
 				prettyPrint(curr, fact);
 				Set<DataFlowFact> out = Sets.newHashSet();
 				out.add(fact);
-				
+
 				//TODO: Implement Exercise 1a) here
-				//TODO: Implement cases for field load and field store statement of Exercise 3) here
+				if (curr instanceof AssignStmt) {
+					Value leftOp = ((AssignStmt) curr).getLeftOp();
+					Value rightOp = ((AssignStmt) curr).getRightOp();
+
+					//TODO: Implement cases for field load and field store statement of Exercise 3) here
+					DataFlowFact rightDF = fieldSensitiveDataFlowFact(rightOp);
+					DataFlowFact leftDF = fieldSensitiveDataFlowFact(leftOp);
+
+					if (rightOp instanceof Constant) {
+						if (fact.equals(leftDF)) {
+							return Collections.emptySet();
+						}
+						return out;
+					}
+					if (rightDF == null)
+						return out;
+
+					boolean varPassed = false;
+					boolean fieldPassed = false;
+
+					if (fact.getVariable() != null && rightDF.getVariable() != null && fact.getVariable().equals(rightDF.getVariable())) {  // x = y <fact=y>
+						varPassed = true;
+					}
+
+					if (fact.getField() != null && rightDF.getField() != null && fact.getField().equals(rightDF.getField())) { // x
+						fieldPassed = true;
+					} else if (fact.getField() == null && rightDF.getField() == null) {
+						fieldPassed = true;
+					}
+
+					if (varPassed && fieldPassed)
+						out.add(leftDF);
+				}
 				return out;
 			}
 		};

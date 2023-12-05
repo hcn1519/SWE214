@@ -13,7 +13,7 @@ public abstract class TaintAnalysisFlowFunctions implements FlowFunctions<Unit, 
 	}
 	
 	protected void prettyPrint(Unit stmt, DataFlowFact fact){
-		if(icfg.getMethodOf(stmt).toString().contains("doGet"))
+//		if(icfg.getMethodOf(stmt).toString().contains("doGet"))
 			System.out.println("Method :" +icfg.getMethodOf(stmt) +", Stmt: " + stmt +", Fact: " + fact);
 	}
 }
